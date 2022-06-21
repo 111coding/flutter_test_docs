@@ -1,0 +1,15 @@
+builders:
+  markdown_generator:
+    build_extensions: 
+      ".dart": [".md"]
+    import: "lib/markdown_generator.dart"
+    builder_factories: ["markdownGenerator"]
+    auto_apply: dependents
+    # auto_apply: root_package
+    # build_to: cache
+    build_to: source
+    applies_builders: ["source_gen"]
+    # defaults:
+    #   generate_for:
+    #    - "lib/*"
+    #    - "lib/src/generated/**"
