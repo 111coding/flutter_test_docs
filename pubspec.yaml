@@ -1,7 +1,7 @@
 name: test_docs
 description: Test Code Markdown Generator
 version: 0.0.1
-publisher: jwlee1024@gmail.com
+# publisher: jwlee1024@gmail.com
 homepage: https://github.com/111coding
 repository: https://github.com/111coding/flutter_test_docs
 
