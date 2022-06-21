@@ -1,7 +1,9 @@
 name: test_docs
 description: Test Code Markdown Generator
 version: 0.0.1
-homepage:
+publisher: jwlee1024@gmail.com
+homepage: https://github.com/111coding
+repository: https://github.com/111coding/flutter_test_docs
 
 environment:
   sdk: ">=2.17.1 <3.0.0"
@@ -11,16 +13,16 @@ dependencies:
   flutter:
     sdk: flutter
 
-  source_gen:
-  build:
-  analyzer:
+  source_gen: ^1.2.2
+  build: ^2.3.0
+  analyzer:  ^4.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
 
-  build_runner: ^1.7.0
+  build_runner: ^2.1.11
 
 
 flutter:
