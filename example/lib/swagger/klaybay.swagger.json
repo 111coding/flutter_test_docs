@@ -1,0 +1,4653 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/": {
+            "get": {
+                "operationId": "AppController_getHello",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/companies": {
+            "post": {
+                "operationId": "createCompany",
+                "summary": "",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateCompanyDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "companies"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/games": {
+            "get": {
+                "operationId": "getGames",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"vol_24h:ASC\" or \"vol_24h:DESC\", \"vol_24h_rate:ASC\" or \"vol_24h_rate:DESC\", \"total_vol:ASC\" or \"total_vol:DESC\", \"floor_price:ASC\" or \"floor_price:DESC\", \"owner_count:ASC\" or \"owner_count:DESC\", \"item_count:ASC\" or \"item_count:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfGame",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/PaginatedWithTotal"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/Game"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "games"
+                ]
+            }
+        },
+        "/games/{id}": {
+            "get": {
+                "operationId": "getGame",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GameDetail"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "games"
+                ]
+            }
+        },
+        "/item-contracts": {
+            "post": {
+                "operationId": "registerContract",
+                "summary": "",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RegisterItemContractDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "409": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "item-contracts"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "get": {
+                "operationId": "getContracts",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"address:ASC\" or \"address:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfItemContract",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Paginated"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/ItemContract"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "item-contracts"
+                ]
+            }
+        },
+        "/item-contracts/{address}": {
+            "get": {
+                "operationId": "getContract",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ItemContract"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "item-contracts"
+                ]
+            }
+        },
+        "/item-contracts/{address}/items": {
+            "get": {
+                "operationId": "getItems",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"listing_price:ASC\" or \"listing_price:DESC\", \"listing_time:ASC\" or \"listing_time:DESC\", \"expiration_time:ASC\" or \"expiration_time:DESC\", \"created_at:ASC\" or \"created_at:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "searchBy",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[listing_price]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$gte:&lt;listing_price>\", \"$lte:&lt;listing_price>\", \"$btw:&lt;listing_price[0]>,&lt;listing_price[1]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[has_offers]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "filter[new]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "filter[on_auction]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "filter[buy_now]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "filter[trait_values]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "filter[trait_types]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfItemSummary",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/PaginatedWithTotal"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/ItemSummary"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "item-contracts"
+                ]
+            }
+        },
+        "/item-contracts/{address}/sales": {
+            "get": {
+                "operationId": "getSales",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"price:ASC\" or \"price:DESC\", \"timestamp:ASC\" or \"timestamp:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "filter[price]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$gte:&lt;price>\", \"$lte:&lt;price>\", \"$btw:&lt;price[0]>,&lt;price[1]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[trait_values]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "filter[trait_types]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfItemActivity",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Paginated"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/ItemActivity"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "item-contracts"
+                ]
+            }
+        },
+        "/item-contracts/{address}/activate": {
+            "put": {
+                "operationId": "activateContract",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "412": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "item-contracts"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/item-contracts/{address}/deactivate": {
+            "put": {
+                "operationId": "deactivateContract",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "item-contracts"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/item-contracts/{address}/emit_add_contract": {
+            "post": {
+                "operationId": "emitAddContract",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "item-contracts"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/contracts/{address}": {
+            "get": {
+                "operationId": "getItemContract",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "contracts"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/chain-events/{tx_hash}": {
+            "get": {
+                "operationId": "getChainEventsByTxHash",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "tx_hash",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ChainEventEntity"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "chain-events"
+                ]
+            }
+        },
+        "/items": {
+            "get": {
+                "operationId": "getItems",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"listing_price:ASC\" or \"listing_price:DESC\", \"listing_time:ASC\" or \"listing_time:DESC\", \"expiration_time:ASC\" or \"expiration_time:DESC\", \"created_at:ASC\" or \"created_at:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "searchBy",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[listing_price]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$gte:&lt;listing_price>\", \"$lte:&lt;listing_price>\", \"$btw:&lt;listing_price[0]>,&lt;listing_price[1]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfItemSummary",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/PaginatedWithTotal"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/ItemSummary"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "items"
+                ]
+            }
+        },
+        "/items/{contract_address}/{token_id}": {
+            "get": {
+                "operationId": "getItem",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "contract_address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token_id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "viewer",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ItemDetail"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "items"
+                ]
+            }
+        },
+        "/items/{contract_address}/{token_id}/activities": {
+            "get": {
+                "operationId": "getItemActivities",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "contract_address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token_id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"timestamp:ASC\" or \"timestamp:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "filter[activity_type]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$eq:&lt;activity_type>\" or \"$lt;activity_type>\", \"$in:&lt;activity_type[0]>,&lt;activity_type[1]>,...,&lt;activity_type[n]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfItemActivity",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Paginated"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/ItemActivity"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "items"
+                ]
+            }
+        },
+        "/items/{contract_address}/{token_id}/refresh_metadata": {
+            "post": {
+                "operationId": "refreshMetadata",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "contract_address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token_id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "items"
+                ]
+            }
+        },
+        "/items/{contract_address}/{token_id}/subscribe": {
+            "get": {
+                "operationId": "ItemsController_subscribe",
+                "parameters": [
+                    {
+                        "name": "contract_address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token_id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "items"
+                ]
+            }
+        },
+        "/accounts": {
+            "get": {
+                "operationId": "getAccounts",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"address:ASC\" or \"address:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfAccount",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Paginated"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/Account"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "accounts"
+                ]
+            }
+        },
+        "/accounts/validate-username": {
+            "get": {
+                "operationId": "validateUserName",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "required": true,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UsernameValidation"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "accounts"
+                ]
+            }
+        },
+        "/accounts/{address}": {
+            "get": {
+                "operationId": "getAccount",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Profile"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "accounts"
+                ]
+            },
+            "patch": {
+                "operationId": "updateAccount",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateAccountDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "InvalidUsernameException": {
+                                        "description": "Bad Request",
+                                        "value": {
+                                            "statusCode": 400,
+                                            "message": "Bad Request",
+                                            "error": "InvalidUsernameException",
+                                            "errorCode": "InvalidUsername"
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "statusCode": {
+                                            "type": "number",
+                                            "example": 400
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Bad Request"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "InvalidUsernameException"
+                                        },
+                                        "errorCode": {
+                                            "type": "string",
+                                            "example": "InvalidUsername"
+                                        }
+                                    },
+                                    "required": [
+                                        "statusCode",
+                                        "message"
+                                    ]
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "412": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "accounts"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/accounts/{address}/items": {
+            "get": {
+                "operationId": "getItems",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"listing_price:ASC\" or \"listing_price:DESC\", \"listing_time:ASC\" or \"listing_time:DESC\", \"expiration_time:ASC\" or \"expiration_time:DESC\", \"created_at:ASC\" or \"created_at:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "searchBy",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[listing_price]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$gte:&lt;listing_price>\", \"$lte:&lt;listing_price>\", \"$btw:&lt;listing_price[0]>,&lt;listing_price[1]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[game_id]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$eq:&lt;game_id>\" or \"<game_id>\", \"$in:&lt;game_id[0]>,&lt;game_id[1]>,...,&lt;game_id[n]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[has_offers]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "filter[new]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "filter[on_auction]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "filter[buy_now]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfItemSummary",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/PaginatedWithTotal"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/ItemSummary"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "accounts"
+                ]
+            }
+        },
+        "/accounts/{address}/listings": {
+            "get": {
+                "operationId": "getListings",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"created_at:ASC\" or \"created_at:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "filter[base_price]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$gte:&lt;base_price>\", \"$lte:&lt;base_price>\", \"$btw:&lt;base_price[0]>,&lt;base_price[1]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[game_id]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$eq:&lt;game_id>\" or \"<game_id>\", \"$in:&lt;game_id[0]>,&lt;game_id[1]>,...,&lt;game_id[n]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[active]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfOrder",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Paginated"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/Order"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "accounts"
+                ]
+            }
+        },
+        "/accounts/{address}/offers": {
+            "get": {
+                "operationId": "getOffers",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "viewer",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"created_at:ASC\" or \"created_at:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "filter[base_price]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$gte:&lt;base_price>\", \"$lte:&lt;base_price>\", \"$btw:&lt;base_price[0]>,&lt;base_price[1]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[game_id]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$eq:&lt;game_id>\" or \"<game_id>\", \"$in:&lt;game_id[0]>,&lt;game_id[1]>,...,&lt;game_id[n]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[made]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfOrder",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Paginated"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/Order"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "accounts"
+                ]
+            }
+        },
+        "/accounts/{address}/activities": {
+            "get": {
+                "operationId": "getActivities",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"timestamp:ASC\" or \"timestamp:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "filter[activity_type]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$eq:&lt;activity_type>\" or \"$lt;activity_type>\", \"$in:&lt;activity_type[0]>,&lt;activity_type[1]>,...,&lt;activity_type[n]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[game_id]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$eq:&lt;game_id>\" or \"<game_id>\", \"$in:&lt;game_id[0]>,&lt;game_id[1]>,...,&lt;game_id[n]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfItemActivity",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Paginated"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/ItemActivity"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "accounts"
+                ]
+            }
+        },
+        "/accounts/{address}/profile": {
+            "post": {
+                "operationId": "uploadProfile",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "required": [
+                                    "file"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "accounts"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/accounts/{address}/banner": {
+            "post": {
+                "operationId": "uploadBanner",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "required": [
+                                    "file"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "accounts"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/orders": {
+            "post": {
+                "operationId": "createOrder",
+                "summary": "",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateOrderDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Order"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "orders"
+                ]
+            },
+            "get": {
+                "operationId": "getOrders",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"created_at:ASC\" or \"created_at:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "filter[maker]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$eq:&lt;maker>\" or \"$lt;maker>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[taker]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$eq:&lt;taker>\" or \"$lt;taker>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[payment_token]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$eq:&lt;payment_token>\" or \"$lt;payment_token>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[side]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$eq:&lt;side>\" or \"$lt;side>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[sale_kind]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$eq:&lt;sale_kind>\" or \"$lt;sale_kind>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[is_english]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "filter[item_address]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[owner]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfOrder",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/PaginatedWithTotal"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/Order"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "orders"
+                ]
+            }
+        },
+        "/orders/make_buy_order": {
+            "post": {
+                "operationId": "makeBuyOrder",
+                "summary": "",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MakeBuyOrderRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnhashedOrder"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "InvalidOrderParamsException": {
+                                        "description": "Bad Request",
+                                        "value": {
+                                            "statusCode": 400,
+                                            "message": "Bad Request",
+                                            "error": "InvalidOrderParamsException"
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "statusCode": {
+                                            "type": "number",
+                                            "example": 400
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Bad Request"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "InvalidOrderParamsException"
+                                        },
+                                        "errorCode": {
+                                            "type": "undefined"
+                                        }
+                                    },
+                                    "required": [
+                                        "statusCode",
+                                        "message"
+                                    ]
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "orders"
+                ]
+            }
+        },
+        "/orders/make_sell_order": {
+            "post": {
+                "operationId": "makeSellOrder",
+                "summary": "",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MakeSellOrderRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnhashedOrder"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "InvalidOrderParamsException": {
+                                        "description": "Bad Request",
+                                        "value": {
+                                            "statusCode": 400,
+                                            "message": "Bad Request",
+                                            "error": "InvalidOrderParamsException"
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "statusCode": {
+                                            "type": "number",
+                                            "example": 400
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Bad Request"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "InvalidOrderParamsException"
+                                        },
+                                        "errorCode": {
+                                            "type": "undefined"
+                                        }
+                                    },
+                                    "required": [
+                                        "statusCode",
+                                        "message"
+                                    ]
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "orders"
+                ]
+            }
+        },
+        "/orders/make_matching_order": {
+            "post": {
+                "operationId": "makeMatchingOrder",
+                "summary": "",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MakeMatchingOrderRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnsignedOrder"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "InvalidOrderParamsException": {
+                                        "description": "Bad Request",
+                                        "value": {
+                                            "statusCode": 400,
+                                            "message": "Bad Request",
+                                            "error": "InvalidOrderParamsException"
+                                        }
+                                    }
+                                },
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "statusCode": {
+                                            "type": "number",
+                                            "example": 400
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Bad Request"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "InvalidOrderParamsException"
+                                        },
+                                        "errorCode": {
+                                            "type": "undefined"
+                                        }
+                                    },
+                                    "required": [
+                                        "statusCode",
+                                        "message"
+                                    ]
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "orders"
+                ]
+            }
+        },
+        "/orders/{id}": {
+            "get": {
+                "operationId": "getOrder",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Order"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "orders"
+                ]
+            }
+        },
+        "/item-activities/sales": {
+            "get": {
+                "operationId": "getSaleActivities",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"price:ASC\" or \"price:DESC\", \"timestamp:ASC\" or \"timestamp:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "filter[price]",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"$gte:&lt;price>\", \"$lte:&lt;price>\", \"$btw:&lt;price[0]>,&lt;price[1]>\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfItemActivity",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Paginated"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/ItemActivity"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "item-activities"
+                ]
+            }
+        },
+        "/tokens": {
+            "get": {
+                "operationId": "getTokens",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "filter[name]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[address]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[symbol]",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Token"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tokens"
+                ]
+            }
+        },
+        "/tokens/{address}": {
+            "get": {
+                "operationId": "getToken",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Token"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tokens"
+                ]
+            }
+        },
+        "/items/{contract_address}/{token_id}/owners": {
+            "get": {
+                "operationId": "getItemOwners",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "contract_address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token_id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "required": false,
+                        "in": "query",
+                        "description": "\"owner:ASC\" or \"owner:DESC\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "PageResponseOfItemOwner",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Paginated"
+                                        },
+                                        {
+                                            "properties": {
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "$ref": "#/components/schemas/ItemOwner"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "items"
+                ]
+            }
+        },
+        "/items/{contract_address}/{token_id}/owners/{owner}": {
+            "get": {
+                "operationId": "getItemOwner",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "contract_address",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token_id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "owner",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ItemOwner"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "items"
+                ]
+            }
+        }
+    },
+    "info": {
+        "title": "Klaybay",
+        "description": "Klaybay REST API",
+        "version": "1.0",
+        "contact": {}
+    },
+    "tags": [],
+    "servers": [],
+    "components": {
+        "securitySchemes": {
+            "bearer": {
+                "scheme": "bearer",
+                "bearerFormat": "JWT",
+                "type": "http"
+            }
+        },
+        "schemas": {
+            "Map": {
+                "type": "object",
+                "properties": {}
+            },
+            "CreateCompanyDto": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "manager": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "banner": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/Map"
+                            }
+                        ]
+                    },
+                    "description": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/Map"
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "id",
+                    "manager",
+                    "name"
+                ]
+            },
+            "PaginatedMeta": {
+                "type": "object",
+                "properties": {
+                    "itemsPerPage": {
+                        "type": "number"
+                    },
+                    "currentPage": {
+                        "type": "number"
+                    },
+                    "sortBy": {
+                        "type": "object"
+                    },
+                    "searchBy": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "search": {
+                        "type": "string"
+                    },
+                    "filter": {
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "itemsPerPage",
+                    "currentPage",
+                    "sortBy",
+                    "searchBy",
+                    "search"
+                ]
+            },
+            "PaginatedLinks": {
+                "type": "object",
+                "properties": {
+                    "first": {
+                        "type": "string"
+                    },
+                    "previous": {
+                        "type": "string"
+                    },
+                    "current": {
+                        "type": "string"
+                    },
+                    "next": {
+                        "type": "string"
+                    },
+                    "last": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Paginated": {
+                "type": "object",
+                "properties": {
+                    "meta": {
+                        "$ref": "#/components/schemas/PaginatedMeta"
+                    },
+                    "links": {
+                        "$ref": "#/components/schemas/PaginatedLinks"
+                    }
+                },
+                "required": [
+                    "meta",
+                    "links"
+                ]
+            },
+            "PaginatedMetaWithTotal": {
+                "type": "object",
+                "properties": {
+                    "itemsPerPage": {
+                        "type": "number"
+                    },
+                    "currentPage": {
+                        "type": "number"
+                    },
+                    "sortBy": {
+                        "type": "object"
+                    },
+                    "searchBy": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "search": {
+                        "type": "string"
+                    },
+                    "filter": {
+                        "type": "object"
+                    },
+                    "totalItems": {
+                        "type": "number"
+                    },
+                    "totalPages": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "itemsPerPage",
+                    "currentPage",
+                    "sortBy",
+                    "searchBy",
+                    "search",
+                    "totalItems",
+                    "totalPages"
+                ]
+            },
+            "PaginatedWithTotal": {
+                "type": "object",
+                "properties": {
+                    "meta": {
+                        "$ref": "#/components/schemas/PaginatedMetaWithTotal"
+                    },
+                    "links": {
+                        "$ref": "#/components/schemas/PaginatedLinks"
+                    }
+                },
+                "required": [
+                    "meta",
+                    "links"
+                ]
+            },
+            "GameLink": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "SITE",
+                            "DISCORD",
+                            "TWITTER"
+                        ]
+                    },
+                    "url": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type",
+                    "url"
+                ]
+            },
+            "Account": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "profile_image": {
+                        "type": "string"
+                    },
+                    "banner_image": {
+                        "type": "string"
+                    },
+                    "twitter": {
+                        "type": "string"
+                    },
+                    "instagram": {
+                        "type": "string"
+                    },
+                    "site": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "address"
+                ]
+            },
+            "Company": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "manager": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/Map"
+                            }
+                        ]
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "banner": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/Map"
+                            }
+                        ]
+                    },
+                    "manager_account": {
+                        "$ref": "#/components/schemas/Account"
+                    }
+                },
+                "required": [
+                    "id",
+                    "manager",
+                    "name",
+                    "description"
+                ]
+            },
+            "Game": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "company_id": {
+                        "type": "string"
+                    },
+                    "manager": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/Map"
+                            }
+                        ]
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "banner": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/Map"
+                            }
+                        ]
+                    },
+                    "vol_24h": {
+                        "type": "string"
+                    },
+                    "vol_24h_rate": {
+                        "type": "number"
+                    },
+                    "total_vol": {
+                        "type": "string"
+                    },
+                    "floor_price": {
+                        "type": "string"
+                    },
+                    "owner_count": {
+                        "type": "number"
+                    },
+                    "item_count": {
+                        "type": "number"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GameLink"
+                        }
+                    },
+                    "company": {
+                        "$ref": "#/components/schemas/Company"
+                    },
+                    "manager_account": {
+                        "$ref": "#/components/schemas/Account"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "activated",
+                            "deactivated"
+                        ]
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "description",
+                    "owner_count",
+                    "item_count",
+                    "status"
+                ]
+            },
+            "ItemStringAttributeStat": {
+                "type": "object",
+                "properties": {
+                    "trait_type": {
+                        "type": "string"
+                    },
+                    "display_type": {
+                        "type": "string",
+                        "enum": [
+                            "string",
+                            "number",
+                            "boost_percentage",
+                            "boost_number",
+                            "date"
+                        ]
+                    },
+                    "count": {
+                        "type": "number"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "trait_type",
+                    "display_type",
+                    "count",
+                    "value"
+                ]
+            },
+            "ItemNumberAttributeStat": {
+                "type": "object",
+                "properties": {
+                    "trait_type": {
+                        "type": "string"
+                    },
+                    "display_type": {
+                        "type": "string",
+                        "enum": [
+                            "string",
+                            "number",
+                            "boost_percentage",
+                            "boost_number",
+                            "date"
+                        ]
+                    },
+                    "count": {
+                        "type": "number"
+                    },
+                    "min_value": {
+                        "type": "number"
+                    },
+                    "max_value": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "trait_type",
+                    "display_type",
+                    "count",
+                    "min_value",
+                    "max_value"
+                ]
+            },
+            "ItemBoostPercentageAttributeStat": {
+                "type": "object",
+                "properties": {
+                    "trait_type": {
+                        "type": "string"
+                    },
+                    "display_type": {
+                        "type": "string",
+                        "enum": [
+                            "string",
+                            "number",
+                            "boost_percentage",
+                            "boost_number",
+                            "date"
+                        ]
+                    },
+                    "count": {
+                        "type": "number"
+                    },
+                    "min_value": {
+                        "type": "number"
+                    },
+                    "max_value": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "trait_type",
+                    "display_type",
+                    "count",
+                    "min_value",
+                    "max_value"
+                ]
+            },
+            "ItemBoostNumberAttributeStat": {
+                "type": "object",
+                "properties": {
+                    "trait_type": {
+                        "type": "string"
+                    },
+                    "display_type": {
+                        "type": "string",
+                        "enum": [
+                            "string",
+                            "number",
+                            "boost_percentage",
+                            "boost_number",
+                            "date"
+                        ]
+                    },
+                    "count": {
+                        "type": "number"
+                    },
+                    "min_value": {
+                        "type": "number"
+                    },
+                    "max_value": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "trait_type",
+                    "display_type",
+                    "count",
+                    "min_value",
+                    "max_value"
+                ]
+            },
+            "ItemDateAttributeStat": {
+                "type": "object",
+                "properties": {
+                    "trait_type": {
+                        "type": "string"
+                    },
+                    "display_type": {
+                        "type": "string",
+                        "enum": [
+                            "string",
+                            "number",
+                            "boost_percentage",
+                            "boost_number",
+                            "date"
+                        ]
+                    },
+                    "count": {
+                        "type": "number"
+                    },
+                    "value": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "trait_type",
+                    "display_type",
+                    "count",
+                    "value"
+                ]
+            },
+            "ItemContract": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "type": "string"
+                    },
+                    "game_id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "ERC721",
+                            "ERC1155",
+                            "KIP17",
+                            "KIP37"
+                        ]
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "external_link": {
+                        "type": "string"
+                    },
+                    "klaybay_buyer_fee_basis_points": {
+                        "type": "number"
+                    },
+                    "klaybay_seller_fee_basis_points": {
+                        "type": "number"
+                    },
+                    "dev_buyer_fee_basis_points": {
+                        "type": "number"
+                    },
+                    "dev_seller_fee_basis_points": {
+                        "type": "number"
+                    },
+                    "item_attribute_stats": {
+                        "type": "array",
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/components/schemas/ItemStringAttributeStat"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ItemNumberAttributeStat"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ItemBoostPercentageAttributeStat"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ItemBoostNumberAttributeStat"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ItemDateAttributeStat"
+                                }
+                            ],
+                            "discriminator": {
+                                "propertyName": "display_type",
+                                "mapping": {
+                                    "string": "#/components/schemas/ItemStringAttributeStat",
+                                    "number": "#/components/schemas/ItemNumberAttributeStat",
+                                    "boost_percentage": "#/components/schemas/ItemBoostPercentageAttributeStat",
+                                    "boost_number": "#/components/schemas/ItemBoostNumberAttributeStat",
+                                    "date": "#/components/schemas/ItemDateAttributeStat"
+                                }
+                            }
+                        }
+                    },
+                    "game": {
+                        "$ref": "#/components/schemas/Game"
+                    },
+                    "min_listing_price": {
+                        "type": "string"
+                    },
+                    "max_listing_price": {
+                        "type": "string"
+                    },
+                    "min_sale_price": {
+                        "type": "string"
+                    },
+                    "max_sale_price": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "initialized",
+                            "indexing",
+                            "activated",
+                            "deactivated"
+                        ]
+                    }
+                },
+                "required": [
+                    "address",
+                    "name",
+                    "schema",
+                    "klaybay_buyer_fee_basis_points",
+                    "klaybay_seller_fee_basis_points",
+                    "dev_buyer_fee_basis_points",
+                    "dev_seller_fee_basis_points",
+                    "status"
+                ]
+            },
+            "GameDetail": {
+                "type": "object",
+                "properties": {
+                    "game": {
+                        "$ref": "#/components/schemas/Game"
+                    },
+                    "item_contracts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ItemContract"
+                        }
+                    }
+                },
+                "required": [
+                    "game",
+                    "item_contracts"
+                ]
+            },
+            "ItemMetadata": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "external_url": {
+                        "type": "string"
+                    },
+                    "animation_url": {
+                        "type": "string"
+                    },
+                    "youtube_url": {
+                        "type": "string"
+                    },
+                    "attributes": {
+                        "type": "array",
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/components/schemas/ItemStringAttribute"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ItemNumberAttribute"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ItemBoostPercentageAttribute"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ItemBoostNumberAttribute"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ItemDateAttribute"
+                                }
+                            ],
+                            "discriminator": {
+                                "propertyName": "display_type",
+                                "mapping": {
+                                    "string": "#/components/schemas/ItemStringAttribute",
+                                    "number": "#/components/schemas/ItemNumberAttribute",
+                                    "boost_percentage": "#/components/schemas/ItemBoostPercentageAttribute",
+                                    "boost_number": "#/components/schemas/ItemBoostNumberAttribute",
+                                    "date": "#/components/schemas/ItemDateAttribute"
+                                }
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "attributes"
+                ]
+            },
+            "RegisterItemContractDto": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "type": "string"
+                    },
+                    "game_id": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "address"
+                ]
+            },
+            "ChainEventEntity": {
+                "type": "object",
+                "properties": {
+                    "block_number": {
+                        "type": "string"
+                    },
+                    "log_index": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "tx_hash": {
+                        "type": "string"
+                    },
+                    "payload": {
+                        "type": "object"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "log": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "block_number",
+                    "log_index",
+                    "address",
+                    "tx_hash",
+                    "payload",
+                    "status",
+                    "log"
+                ]
+            },
+            "ItemStringAttribute": {
+                "type": "object",
+                "properties": {
+                    "trait_type": {
+                        "type": "string"
+                    },
+                    "display_type": {
+                        "type": "string",
+                        "enum": [
+                            "string",
+                            "number",
+                            "boost_percentage",
+                            "boost_number",
+                            "date"
+                        ]
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "trait_type",
+                    "display_type",
+                    "value"
+                ]
+            },
+            "ItemNumberAttribute": {
+                "type": "object",
+                "properties": {
+                    "trait_type": {
+                        "type": "string"
+                    },
+                    "display_type": {
+                        "type": "string",
+                        "enum": [
+                            "string",
+                            "number",
+                            "boost_percentage",
+                            "boost_number",
+                            "date"
+                        ]
+                    },
+                    "value": {
+                        "type": "number"
+                    },
+                    "max_value": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "trait_type",
+                    "display_type",
+                    "value"
+                ]
+            },
+            "ItemBoostPercentageAttribute": {
+                "type": "object",
+                "properties": {
+                    "trait_type": {
+                        "type": "string"
+                    },
+                    "display_type": {
+                        "type": "string",
+                        "enum": [
+                            "string",
+                            "number",
+                            "boost_percentage",
+                            "boost_number",
+                            "date"
+                        ]
+                    },
+                    "value": {
+                        "type": "number"
+                    },
+                    "max_value": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "trait_type",
+                    "display_type",
+                    "value"
+                ]
+            },
+            "ItemBoostNumberAttribute": {
+                "type": "object",
+                "properties": {
+                    "trait_type": {
+                        "type": "string"
+                    },
+                    "display_type": {
+                        "type": "string",
+                        "enum": [
+                            "string",
+                            "number",
+                            "boost_percentage",
+                            "boost_number",
+                            "date"
+                        ]
+                    },
+                    "value": {
+                        "type": "number"
+                    },
+                    "max_value": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "trait_type",
+                    "display_type",
+                    "value"
+                ]
+            },
+            "ItemDateAttribute": {
+                "type": "object",
+                "properties": {
+                    "trait_type": {
+                        "type": "string"
+                    },
+                    "display_type": {
+                        "type": "string",
+                        "enum": [
+                            "string",
+                            "number",
+                            "boost_percentage",
+                            "boost_number",
+                            "date"
+                        ]
+                    },
+                    "value": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "trait_type",
+                    "display_type",
+                    "value"
+                ]
+            },
+            "Item": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "contract_address": {
+                        "type": "string"
+                    },
+                    "token_id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "thumbnail": {
+                        "type": "string"
+                    },
+                    "full_image": {
+                        "type": "string"
+                    },
+                    "external_url": {
+                        "type": "string"
+                    },
+                    "animation_url": {
+                        "type": "string"
+                    },
+                    "youtube_url": {
+                        "type": "string"
+                    },
+                    "minter": {
+                        "type": "string"
+                    },
+                    "attributes": {
+                        "type": "array",
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/components/schemas/ItemStringAttribute"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ItemNumberAttribute"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ItemBoostPercentageAttribute"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ItemBoostNumberAttribute"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ItemDateAttribute"
+                                }
+                            ],
+                            "discriminator": {
+                                "propertyName": "display_type",
+                                "mapping": {
+                                    "string": "#/components/schemas/ItemStringAttribute",
+                                    "number": "#/components/schemas/ItemNumberAttribute",
+                                    "boost_percentage": "#/components/schemas/ItemBoostPercentageAttribute",
+                                    "boost_number": "#/components/schemas/ItemBoostNumberAttribute",
+                                    "date": "#/components/schemas/ItemDateAttribute"
+                                }
+                            }
+                        }
+                    },
+                    "contract": {
+                        "$ref": "#/components/schemas/ItemContract"
+                    },
+                    "minter_account": {
+                        "$ref": "#/components/schemas/Account"
+                    },
+                    "listing_price": {
+                        "type": "string"
+                    },
+                    "listing_time": {
+                        "type": "number"
+                    },
+                    "expiration_time": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "id",
+                    "contract_address",
+                    "token_id",
+                    "minter",
+                    "attributes",
+                    "minter_account"
+                ]
+            },
+            "ViewerInfo": {
+                "type": "object",
+                "properties": {
+                    "account": {
+                        "$ref": "#/components/schemas/Account"
+                    },
+                    "owning": {
+                        "type": "boolean"
+                    },
+                    "sellable_count": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "account",
+                    "owning"
+                ]
+            },
+            "ItemDetail": {
+                "type": "object",
+                "properties": {
+                    "item": {
+                        "$ref": "#/components/schemas/Item"
+                    },
+                    "game": {
+                        "$ref": "#/components/schemas/Game"
+                    },
+                    "listings": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Order"
+                        }
+                    },
+                    "offers": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Order"
+                        }
+                    },
+                    "owner_count": {
+                        "type": "number"
+                    },
+                    "owner_account": {
+                        "$ref": "#/components/schemas/Account"
+                    },
+                    "viewer_info": {
+                        "$ref": "#/components/schemas/ViewerInfo"
+                    }
+                },
+                "required": [
+                    "item",
+                    "listings",
+                    "offers",
+                    "owner_count"
+                ]
+            },
+            "UsernameValidation": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string"
+                    },
+                    "available": {
+                        "type": "boolean"
+                    },
+                    "reason": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "username",
+                    "available",
+                    "reason"
+                ]
+            },
+            "ItemCountPerGame": {
+                "type": "object",
+                "properties": {
+                    "game_id": {
+                        "type": "string"
+                    },
+                    "game_name": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/Map"
+                            }
+                        ]
+                    },
+                    "item_count": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "game_id",
+                    "game_name",
+                    "item_count"
+                ]
+            },
+            "ItemPossessionStatus": {
+                "type": "object",
+                "properties": {
+                    "min_listing_price": {
+                        "type": "string"
+                    },
+                    "max_listing_price": {
+                        "type": "string"
+                    },
+                    "games": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ItemCountPerGame"
+                        }
+                    }
+                },
+                "required": [
+                    "games"
+                ]
+            },
+            "GameOrderCount": {
+                "type": "object",
+                "properties": {
+                    "game_id": {
+                        "type": "string"
+                    },
+                    "game_name": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/Map"
+                            }
+                        ]
+                    },
+                    "order_count": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "game_id",
+                    "game_name",
+                    "order_count"
+                ]
+            },
+            "Profile": {
+                "type": "object",
+                "properties": {
+                    "account": {
+                        "$ref": "#/components/schemas/Account"
+                    },
+                    "item_possession_status": {
+                        "$ref": "#/components/schemas/ItemPossessionStatus"
+                    },
+                    "min_listing_price": {
+                        "type": "string"
+                    },
+                    "max_listing_price": {
+                        "type": "string"
+                    },
+                    "active_listing_counts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GameOrderCount"
+                        }
+                    },
+                    "inactive_listing_counts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GameOrderCount"
+                        }
+                    },
+                    "min_offer_price": {
+                        "type": "string"
+                    },
+                    "max_offer_price": {
+                        "type": "string"
+                    },
+                    "made_offer_counts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GameOrderCount"
+                        }
+                    },
+                    "received_offer_counts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GameOrderCount"
+                        }
+                    }
+                },
+                "required": [
+                    "account",
+                    "item_possession_status",
+                    "min_listing_price",
+                    "max_listing_price",
+                    "active_listing_counts",
+                    "inactive_listing_counts",
+                    "min_offer_price",
+                    "max_offer_price",
+                    "made_offer_counts",
+                    "received_offer_counts"
+                ]
+            },
+            "ApiException": {
+                "type": "object",
+                "properties": {
+                    "statusCode": {
+                        "type": "number"
+                    },
+                    "errorCode": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "error": {
+                        "type": "string"
+                    },
+                    "extra": {
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "statusCode",
+                    "message",
+                    "error"
+                ]
+            },
+            "UpdateAccountDto": {
+                "type": "object",
+                "properties": {
+                    "twitter": {
+                        "type": "string"
+                    },
+                    "instagram": {
+                        "type": "string"
+                    },
+                    "site": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateOrderDto": {
+                "type": "object",
+                "properties": {
+                    "hash": {
+                        "type": "string"
+                    },
+                    "exchange": {
+                        "type": "string"
+                    },
+                    "maker": {
+                        "type": "string"
+                    },
+                    "taker": {
+                        "type": "string"
+                    },
+                    "maker_relayer_fee": {
+                        "type": "string"
+                    },
+                    "taker_relayer_fee": {
+                        "type": "string"
+                    },
+                    "maker_protocol_fee": {
+                        "type": "string"
+                    },
+                    "taker_protocol_fee": {
+                        "type": "string"
+                    },
+                    "maker_referrer_fee": {
+                        "type": "string"
+                    },
+                    "fee_recipient": {
+                        "type": "string"
+                    },
+                    "fee_method": {
+                        "type": "number"
+                    },
+                    "side": {
+                        "type": "number"
+                    },
+                    "sale_kind": {
+                        "type": "number"
+                    },
+                    "target": {
+                        "type": "string"
+                    },
+                    "how_to_call": {
+                        "type": "number"
+                    },
+                    "calldata": {
+                        "type": "string"
+                    },
+                    "replacement_pattern": {
+                        "type": "string"
+                    },
+                    "static_target": {
+                        "type": "string"
+                    },
+                    "static_extradata": {
+                        "type": "string"
+                    },
+                    "payment_token": {
+                        "type": "string"
+                    },
+                    "base_price": {
+                        "type": "string"
+                    },
+                    "extra": {
+                        "type": "string"
+                    },
+                    "listing_time": {
+                        "type": "number"
+                    },
+                    "expiration_time": {
+                        "type": "number"
+                    },
+                    "salt": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "string"
+                    },
+                    "english_auction_reserve_price": {
+                        "type": "string"
+                    },
+                    "current_bounty": {
+                        "type": "string"
+                    },
+                    "v": {
+                        "type": "number"
+                    },
+                    "r": {
+                        "type": "string"
+                    },
+                    "s": {
+                        "type": "string"
+                    },
+                    "contract_address": {
+                        "type": "string"
+                    },
+                    "token_id": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "hash",
+                    "exchange",
+                    "maker",
+                    "taker",
+                    "maker_relayer_fee",
+                    "taker_relayer_fee",
+                    "maker_protocol_fee",
+                    "taker_protocol_fee",
+                    "maker_referrer_fee",
+                    "fee_recipient",
+                    "fee_method",
+                    "side",
+                    "sale_kind",
+                    "target",
+                    "how_to_call",
+                    "static_target",
+                    "payment_token",
+                    "base_price",
+                    "extra",
+                    "listing_time",
+                    "expiration_time",
+                    "salt",
+                    "quantity",
+                    "contract_address",
+                    "token_id"
+                ]
+            },
+            "Token": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "symbol": {
+                        "type": "string"
+                    },
+                    "decimals": {
+                        "type": "number"
+                    },
+                    "image_url": {
+                        "type": "string"
+                    },
+                    "klay_price": {
+                        "type": "string"
+                    },
+                    "usd_price": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "address",
+                    "name",
+                    "symbol",
+                    "decimals"
+                ]
+            },
+            "ItemActivity": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "item_id": {
+                        "type": "string"
+                    },
+                    "activity_type": {
+                        "type": "string",
+                        "enum": [
+                            "minted",
+                            "sale",
+                            "transfer",
+                            "list",
+                            "bid",
+                            "offer",
+                            "burned"
+                        ]
+                    },
+                    "price": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "number"
+                    },
+                    "from": {
+                        "type": "string"
+                    },
+                    "to": {
+                        "type": "string"
+                    },
+                    "tx_hash": {
+                        "type": "string"
+                    },
+                    "order_id": {
+                        "type": "string"
+                    },
+                    "timestamp": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "listing_time": {
+                        "type": "number"
+                    },
+                    "expiration_time": {
+                        "type": "number"
+                    },
+                    "item": {
+                        "$ref": "#/components/schemas/Item"
+                    },
+                    "item_summary": {
+                        "$ref": "#/components/schemas/ItemSummary"
+                    },
+                    "payment_token_contract": {
+                        "$ref": "#/components/schemas/Token"
+                    },
+                    "from_account": {
+                        "$ref": "#/components/schemas/Account"
+                    },
+                    "to_account": {
+                        "$ref": "#/components/schemas/Account"
+                    }
+                },
+                "required": [
+                    "id",
+                    "item_id",
+                    "activity_type",
+                    "timestamp"
+                ]
+            },
+            "ItemSummary": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "contract_address": {
+                        "type": "string"
+                    },
+                    "contract_schema": {
+                        "type": "string",
+                        "enum": [
+                            "ERC721",
+                            "ERC1155",
+                            "KIP17",
+                            "KIP37"
+                        ]
+                    },
+                    "token_id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "thumbnail": {
+                        "type": "string"
+                    },
+                    "full_image": {
+                        "type": "string"
+                    },
+                    "external_url": {
+                        "type": "string"
+                    },
+                    "animation_url": {
+                        "type": "string"
+                    },
+                    "youtube_url": {
+                        "type": "string"
+                    },
+                    "minter": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "game": {
+                        "$ref": "#/components/schemas/Game"
+                    },
+                    "current_listing": {
+                        "$ref": "#/components/schemas/ItemActivity"
+                    },
+                    "top_bid": {
+                        "$ref": "#/components/schemas/ItemActivity"
+                    },
+                    "top_offer": {
+                        "$ref": "#/components/schemas/ItemActivity"
+                    },
+                    "recent_bid": {
+                        "$ref": "#/components/schemas/ItemActivity"
+                    },
+                    "recent_offer": {
+                        "$ref": "#/components/schemas/ItemActivity"
+                    },
+                    "last_sale": {
+                        "$ref": "#/components/schemas/ItemActivity"
+                    },
+                    "viewer_info": {
+                        "$ref": "#/components/schemas/ViewerInfo"
+                    }
+                },
+                "required": [
+                    "id",
+                    "contract_address",
+                    "contract_schema",
+                    "token_id",
+                    "minter",
+                    "created_at"
+                ]
+            },
+            "WyvernNFTAsset": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "address"
+                ]
+            },
+            "WyvernFTAsset": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "address",
+                    "quantity"
+                ]
+            },
+            "WyvernSchemaName": {
+                "type": "string",
+                "enum": [
+                    "ERC20",
+                    "ERC721",
+                    "ERC1155",
+                    "KIP7",
+                    "KIP17",
+                    "KIP37",
+                    "ENSShortNameAuction"
+                ]
+            },
+            "ExchangeMetadataForAsset": {
+                "type": "object",
+                "properties": {
+                    "asset": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schemas/WyvernNFTAsset"
+                            },
+                            {
+                                "$ref": "#/components/schemas/WyvernFTAsset"
+                            }
+                        ]
+                    },
+                    "schema": {
+                        "$ref": "#/components/schemas/WyvernSchemaName"
+                    },
+                    "referrer_address": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "asset",
+                    "schema"
+                ]
+            },
+            "Order": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "hash": {
+                        "type": "string"
+                    },
+                    "item_id": {
+                        "type": "string"
+                    },
+                    "exchange": {
+                        "type": "string"
+                    },
+                    "maker": {
+                        "type": "string"
+                    },
+                    "taker": {
+                        "type": "string"
+                    },
+                    "maker_relayer_fee": {
+                        "type": "string"
+                    },
+                    "taker_relayer_fee": {
+                        "type": "string"
+                    },
+                    "maker_protocol_fee": {
+                        "type": "string"
+                    },
+                    "taker_protocol_fee": {
+                        "type": "string"
+                    },
+                    "maker_referrer_fee": {
+                        "type": "string"
+                    },
+                    "fee_recipient": {
+                        "type": "string"
+                    },
+                    "fee_method": {
+                        "type": "number"
+                    },
+                    "side": {
+                        "type": "number"
+                    },
+                    "sale_kind": {
+                        "type": "number"
+                    },
+                    "target": {
+                        "type": "string"
+                    },
+                    "how_to_call": {
+                        "type": "number"
+                    },
+                    "calldata": {
+                        "type": "string"
+                    },
+                    "replacement_pattern": {
+                        "type": "string"
+                    },
+                    "static_target": {
+                        "type": "string"
+                    },
+                    "static_extradata": {
+                        "type": "string"
+                    },
+                    "payment_token": {
+                        "type": "string"
+                    },
+                    "base_price": {
+                        "type": "string"
+                    },
+                    "extra": {
+                        "type": "string"
+                    },
+                    "listing_time": {
+                        "type": "number"
+                    },
+                    "expiration_time": {
+                        "type": "number"
+                    },
+                    "salt": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "string"
+                    },
+                    "english_auction_reserve_price": {
+                        "type": "string"
+                    },
+                    "current_bounty": {
+                        "type": "string"
+                    },
+                    "v": {
+                        "type": "number"
+                    },
+                    "r": {
+                        "type": "string"
+                    },
+                    "s": {
+                        "type": "string"
+                    },
+                    "cancelled": {
+                        "type": "boolean"
+                    },
+                    "finalized": {
+                        "type": "boolean"
+                    },
+                    "marked_invalid": {
+                        "type": "boolean"
+                    },
+                    "created_at": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "item": {
+                        "$ref": "#/components/schemas/Item"
+                    },
+                    "item_summary": {
+                        "$ref": "#/components/schemas/ItemSummary"
+                    },
+                    "metadata": {
+                        "$ref": "#/components/schemas/ExchangeMetadataForAsset"
+                    },
+                    "maker_account": {
+                        "$ref": "#/components/schemas/Account"
+                    },
+                    "taker_account": {
+                        "$ref": "#/components/schemas/Account"
+                    },
+                    "fee_recipient_account": {
+                        "$ref": "#/components/schemas/Account"
+                    },
+                    "payment_token_contract": {
+                        "$ref": "#/components/schemas/Token"
+                    },
+                    "waiting_for_best_counter_order": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "id",
+                    "hash",
+                    "item_id",
+                    "exchange",
+                    "maker",
+                    "taker",
+                    "maker_relayer_fee",
+                    "taker_relayer_fee",
+                    "maker_protocol_fee",
+                    "taker_protocol_fee",
+                    "maker_referrer_fee",
+                    "fee_recipient",
+                    "fee_method",
+                    "side",
+                    "sale_kind",
+                    "target",
+                    "how_to_call",
+                    "static_target",
+                    "payment_token",
+                    "base_price",
+                    "extra",
+                    "listing_time",
+                    "expiration_time",
+                    "salt",
+                    "quantity",
+                    "cancelled",
+                    "finalized",
+                    "marked_invalid",
+                    "created_at",
+                    "updated_at",
+                    "metadata",
+                    "maker_account",
+                    "taker_account",
+                    "fee_recipient_account",
+                    "payment_token_contract",
+                    "waiting_for_best_counter_order"
+                ]
+            },
+            "MakeBuyOrderRequest": {
+                "type": "object",
+                "properties": {
+                    "token_address": {
+                        "type": "string"
+                    },
+                    "token_id": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "number"
+                    },
+                    "account_address": {
+                        "type": "string"
+                    },
+                    "start_amount": {
+                        "type": "number"
+                    },
+                    "expiration_time": {
+                        "type": "number"
+                    },
+                    "payment_token_address": {
+                        "type": "string"
+                    },
+                    "extra_bounty_basis_points": {
+                        "type": "number"
+                    },
+                    "sell_order_id": {
+                        "type": "string"
+                    },
+                    "referrer_address": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "token_address",
+                    "token_id",
+                    "quantity",
+                    "account_address",
+                    "start_amount",
+                    "expiration_time",
+                    "payment_token_address",
+                    "extra_bounty_basis_points"
+                ]
+            },
+            "UnhashedOrder": {
+                "type": "object",
+                "properties": {
+                    "exchange": {
+                        "type": "string"
+                    },
+                    "maker": {
+                        "type": "string"
+                    },
+                    "taker": {
+                        "type": "string"
+                    },
+                    "maker_relayer_fee": {
+                        "type": "string"
+                    },
+                    "taker_relayer_fee": {
+                        "type": "string"
+                    },
+                    "maker_protocol_fee": {
+                        "type": "string"
+                    },
+                    "taker_protocol_fee": {
+                        "type": "string"
+                    },
+                    "maker_referrer_fee": {
+                        "type": "string"
+                    },
+                    "fee_recipient": {
+                        "type": "string"
+                    },
+                    "fee_method": {
+                        "type": "number"
+                    },
+                    "side": {
+                        "type": "number"
+                    },
+                    "sale_kind": {
+                        "type": "number"
+                    },
+                    "target": {
+                        "type": "string"
+                    },
+                    "how_to_call": {
+                        "type": "number"
+                    },
+                    "calldata": {
+                        "type": "string"
+                    },
+                    "replacement_pattern": {
+                        "type": "string"
+                    },
+                    "static_target": {
+                        "type": "string"
+                    },
+                    "static_extradata": {
+                        "type": "string"
+                    },
+                    "payment_token": {
+                        "type": "string"
+                    },
+                    "base_price": {
+                        "type": "string"
+                    },
+                    "extra": {
+                        "type": "string"
+                    },
+                    "listing_time": {
+                        "type": "number"
+                    },
+                    "expiration_time": {
+                        "type": "number"
+                    },
+                    "salt": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "string"
+                    },
+                    "english_auction_reserve_price": {
+                        "type": "string"
+                    },
+                    "metadata": {
+                        "$ref": "#/components/schemas/ExchangeMetadataForAsset"
+                    },
+                    "waiting_for_best_counter_order": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "exchange",
+                    "maker",
+                    "taker",
+                    "maker_relayer_fee",
+                    "taker_relayer_fee",
+                    "maker_protocol_fee",
+                    "taker_protocol_fee",
+                    "maker_referrer_fee",
+                    "fee_recipient",
+                    "fee_method",
+                    "side",
+                    "sale_kind",
+                    "target",
+                    "how_to_call",
+                    "static_target",
+                    "payment_token",
+                    "base_price",
+                    "extra",
+                    "listing_time",
+                    "expiration_time",
+                    "salt",
+                    "quantity",
+                    "metadata",
+                    "waiting_for_best_counter_order"
+                ]
+            },
+            "MakeSellOrderRequest": {
+                "type": "object",
+                "properties": {
+                    "token_address": {
+                        "type": "string"
+                    },
+                    "token_id": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "number"
+                    },
+                    "account_address": {
+                        "type": "string"
+                    },
+                    "start_amount": {
+                        "type": "number"
+                    },
+                    "end_amount": {
+                        "type": "number"
+                    },
+                    "wait_for_highest_bid": {
+                        "type": "boolean"
+                    },
+                    "english_auction_reserve_price": {
+                        "type": "number"
+                    },
+                    "expiration_time": {
+                        "type": "number"
+                    },
+                    "payment_token_address": {
+                        "type": "string"
+                    },
+                    "extra_bounty_basis_points": {
+                        "type": "number"
+                    },
+                    "buyer_address": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "token_address",
+                    "token_id",
+                    "quantity",
+                    "account_address",
+                    "start_amount",
+                    "wait_for_highest_bid",
+                    "expiration_time",
+                    "payment_token_address",
+                    "extra_bounty_basis_points",
+                    "buyer_address"
+                ]
+            },
+            "MakeMatchingOrderRequest": {
+                "type": "object",
+                "properties": {
+                    "order_id": {
+                        "type": "string"
+                    },
+                    "account_address": {
+                        "type": "string"
+                    },
+                    "recipient_address": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "order_id",
+                    "account_address",
+                    "recipient_address"
+                ]
+            },
+            "UnsignedOrder": {
+                "type": "object",
+                "properties": {
+                    "hash": {
+                        "type": "string"
+                    },
+                    "exchange": {
+                        "type": "string"
+                    },
+                    "maker": {
+                        "type": "string"
+                    },
+                    "taker": {
+                        "type": "string"
+                    },
+                    "maker_relayer_fee": {
+                        "type": "string"
+                    },
+                    "taker_relayer_fee": {
+                        "type": "string"
+                    },
+                    "maker_protocol_fee": {
+                        "type": "string"
+                    },
+                    "taker_protocol_fee": {
+                        "type": "string"
+                    },
+                    "maker_referrer_fee": {
+                        "type": "string"
+                    },
+                    "fee_recipient": {
+                        "type": "string"
+                    },
+                    "fee_method": {
+                        "type": "number"
+                    },
+                    "side": {
+                        "type": "number"
+                    },
+                    "sale_kind": {
+                        "type": "number"
+                    },
+                    "target": {
+                        "type": "string"
+                    },
+                    "how_to_call": {
+                        "type": "number"
+                    },
+                    "calldata": {
+                        "type": "string"
+                    },
+                    "replacement_pattern": {
+                        "type": "string"
+                    },
+                    "static_target": {
+                        "type": "string"
+                    },
+                    "static_extradata": {
+                        "type": "string"
+                    },
+                    "payment_token": {
+                        "type": "string"
+                    },
+                    "base_price": {
+                        "type": "string"
+                    },
+                    "extra": {
+                        "type": "string"
+                    },
+                    "listing_time": {
+                        "type": "number"
+                    },
+                    "expiration_time": {
+                        "type": "number"
+                    },
+                    "salt": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "string"
+                    },
+                    "english_auction_reserve_price": {
+                        "type": "string"
+                    },
+                    "metadata": {
+                        "$ref": "#/components/schemas/ExchangeMetadataForAsset"
+                    },
+                    "waiting_for_best_counter_order": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "hash",
+                    "exchange",
+                    "maker",
+                    "taker",
+                    "maker_relayer_fee",
+                    "taker_relayer_fee",
+                    "maker_protocol_fee",
+                    "taker_protocol_fee",
+                    "maker_referrer_fee",
+                    "fee_recipient",
+                    "fee_method",
+                    "side",
+                    "sale_kind",
+                    "target",
+                    "how_to_call",
+                    "static_target",
+                    "payment_token",
+                    "base_price",
+                    "extra",
+                    "listing_time",
+                    "expiration_time",
+                    "salt",
+                    "quantity",
+                    "metadata",
+                    "waiting_for_best_counter_order"
+                ]
+            },
+            "ItemOwner": {
+                "type": "object",
+                "properties": {
+                    "item_id": {
+                        "type": "string"
+                    },
+                    "owner": {
+                        "type": "string"
+                    },
+                    "amount": {
+                        "type": "string"
+                    },
+                    "owner_account": {
+                        "$ref": "#/components/schemas/Account"
+                    }
+                },
+                "required": [
+                    "item_id",
+                    "owner",
+                    "amount",
+                    "owner_account"
+                ]
+            }
+        }
+    }
+}
