@@ -7,10 +7,10 @@ targets:
 builders:
   markdown_generator:
     build_extensions: 
-      ".dart": [".md"]
-    import: "package:test_docs/markdown_generator.dart"
+      ".swagger.json": ["**.dart"]
+    import: "package:test_docs/freezed_generator.dart"
     # import: "lib/markdown_generator.dart"
-    builder_factories: ["markdownGenerator"]
+    builder_factories: ["swaggerSchemaToFreezed"]
     auto_apply: dependents
     # auto_apply: root_package
     # build_to: cache

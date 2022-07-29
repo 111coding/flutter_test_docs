@@ -43,10 +43,10 @@ part 'paginated_meta.g.dart';
 @freezed
 abstract class PaginatedMeta with _$PaginatedMeta {
   const factory PaginatedMeta({
-    @JsonKey(name: "items_per_page") required int itemsPerPage,
-@JsonKey(name: "current_page") required int currentPage,
-@JsonKey(name: "sort_by") required dynamic sortBy,
-@JsonKey(name: "search_by") required List<array> searchBy,
+    required int itemsperpage,
+required int currentpage,
+required dynamic sortby,
+required List<array> searchby,
 required String search,
 dynamic? filter,
   }) = _PaginatedMeta;
@@ -101,14 +101,14 @@ part 'paginated_meta_with_total.g.dart';
 @freezed
 abstract class PaginatedMetaWithTotal with _$PaginatedMetaWithTotal {
   const factory PaginatedMetaWithTotal({
-    @JsonKey(name: "items_per_page") required int itemsPerPage,
-@JsonKey(name: "current_page") required int currentPage,
-@JsonKey(name: "sort_by") required dynamic sortBy,
-@JsonKey(name: "search_by") required List<array> searchBy,
+    required int itemsperpage,
+required int currentpage,
+required dynamic sortby,
+required List<array> searchby,
 required String search,
 dynamic? filter,
-@JsonKey(name: "total_items") required int totalItems,
-@JsonKey(name: "total_pages") required int totalPages,
+required int totalitems,
+required int totalpages,
   }) = _PaginatedMetaWithTotal;
 
   factory PaginatedMetaWithTotal.fromJson(Map<String, dynamic> json) => _$PaginatedMetaWithTotalFromJson(json);
@@ -161,8 +161,8 @@ abstract class Account with _$Account {
     required String address,
 String? name,
 String? email,
-@JsonKey(name: "profile_image") String? profile_image,
-@JsonKey(name: "banner_image") String? banner_image,
+@JsonKey(name: "profile_image") String? profileImage,
+@JsonKey(name: "banner_image") String? bannerImage,
 String? twitter,
 String? instagram,
 String? site,
@@ -187,7 +187,7 @@ required Map<String,String> name,
 String? image,
 String? banner,
 required Map<String,String> description,
-@JsonKey(name: "manager_account") Account? manager_account,
+@JsonKey(name: "manager_account") Account? managerAccount,
   }) = _Company;
 
   factory Company.fromJson(Map<String, dynamic> json) => _$CompanyFromJson(json);
@@ -204,21 +204,21 @@ part 'game.g.dart';
 abstract class Game with _$Game {
   const factory Game({
     required String id,
-@JsonKey(name: "company_id") String? company_id,
+@JsonKey(name: "company_id") String? companyId,
 String? manager,
 required Map<String,String> name,
 String? image,
 String? banner,
 required Map<String,String> description,
-@JsonKey(name: "vol__2_4h") String? vol_24h,
-@JsonKey(name: "vol__2_4h_rate") int? vol_24h_rate,
-@JsonKey(name: "total_vol") String? total_vol,
-@JsonKey(name: "floor_price") String? floor_price,
-@JsonKey(name: "owner_count") required int owner_count,
-@JsonKey(name: "item_count") required int item_count,
+@JsonKey(name: "vol_2_4h") String? vol24h,
+@JsonKey(name: "vol_2_4h_rate") int? vol24hRate,
+@JsonKey(name: "total_vol") String? totalVol,
+@JsonKey(name: "floor_price") String? floorPrice,
+@JsonKey(name: "owner_count") required int ownerCount,
+@JsonKey(name: "item_count") required int itemCount,
 GameLink? links,
 Company? company,
-@JsonKey(name: "manager_account") Account? manager_account,
+@JsonKey(name: "manager_account") Account? managerAccount,
 required String status,
   }) = _Game;
 
@@ -235,8 +235,8 @@ part 'item_string_attribute_stat.g.dart';
 @freezed
 abstract class ItemStringAttributeStat with _$ItemStringAttributeStat {
   const factory ItemStringAttributeStat({
-    @JsonKey(name: "trait_type") required String trait_type,
-@JsonKey(name: "display_type") required String display_type,
+    @JsonKey(name: "trait_type") required String traitType,
+@JsonKey(name: "display_type") required String displayType,
 required int count,
 required String value,
   }) = _ItemStringAttributeStat;
@@ -254,11 +254,11 @@ part 'item_number_attribute_stat.g.dart';
 @freezed
 abstract class ItemNumberAttributeStat with _$ItemNumberAttributeStat {
   const factory ItemNumberAttributeStat({
-    @JsonKey(name: "trait_type") required String trait_type,
-@JsonKey(name: "display_type") required String display_type,
+    @JsonKey(name: "trait_type") required String traitType,
+@JsonKey(name: "display_type") required String displayType,
 required int count,
-@JsonKey(name: "min_value") required int min_value,
-@JsonKey(name: "max_value") required int max_value,
+@JsonKey(name: "min_value") required int minValue,
+@JsonKey(name: "max_value") required int maxValue,
   }) = _ItemNumberAttributeStat;
 
   factory ItemNumberAttributeStat.fromJson(Map<String, dynamic> json) => _$ItemNumberAttributeStatFromJson(json);
@@ -274,11 +274,11 @@ part 'item_boost_percentage_attribute_stat.g.dart';
 @freezed
 abstract class ItemBoostPercentageAttributeStat with _$ItemBoostPercentageAttributeStat {
   const factory ItemBoostPercentageAttributeStat({
-    @JsonKey(name: "trait_type") required String trait_type,
-@JsonKey(name: "display_type") required String display_type,
+    @JsonKey(name: "trait_type") required String traitType,
+@JsonKey(name: "display_type") required String displayType,
 required int count,
-@JsonKey(name: "min_value") required int min_value,
-@JsonKey(name: "max_value") required int max_value,
+@JsonKey(name: "min_value") required int minValue,
+@JsonKey(name: "max_value") required int maxValue,
   }) = _ItemBoostPercentageAttributeStat;
 
   factory ItemBoostPercentageAttributeStat.fromJson(Map<String, dynamic> json) => _$ItemBoostPercentageAttributeStatFromJson(json);
@@ -294,11 +294,11 @@ part 'item_boost_number_attribute_stat.g.dart';
 @freezed
 abstract class ItemBoostNumberAttributeStat with _$ItemBoostNumberAttributeStat {
   const factory ItemBoostNumberAttributeStat({
-    @JsonKey(name: "trait_type") required String trait_type,
-@JsonKey(name: "display_type") required String display_type,
+    @JsonKey(name: "trait_type") required String traitType,
+@JsonKey(name: "display_type") required String displayType,
 required int count,
-@JsonKey(name: "min_value") required int min_value,
-@JsonKey(name: "max_value") required int max_value,
+@JsonKey(name: "min_value") required int minValue,
+@JsonKey(name: "max_value") required int maxValue,
   }) = _ItemBoostNumberAttributeStat;
 
   factory ItemBoostNumberAttributeStat.fromJson(Map<String, dynamic> json) => _$ItemBoostNumberAttributeStatFromJson(json);
@@ -314,8 +314,8 @@ part 'item_date_attribute_stat.g.dart';
 @freezed
 abstract class ItemDateAttributeStat with _$ItemDateAttributeStat {
   const factory ItemDateAttributeStat({
-    @JsonKey(name: "trait_type") required String trait_type,
-@JsonKey(name: "display_type") required String display_type,
+    @JsonKey(name: "trait_type") required String traitType,
+@JsonKey(name: "display_type") required String displayType,
 required int count,
 required int value,
   }) = _ItemDateAttributeStat;
@@ -334,22 +334,22 @@ part 'item_contract.g.dart';
 abstract class ItemContract with _$ItemContract {
   const factory ItemContract({
     required String address,
-@JsonKey(name: "game_id") String? game_id,
+@JsonKey(name: "game_id") String? gameId,
 required String name,
 required String schema,
 String? description,
 String? image,
-@JsonKey(name: "external_link") String? external_link,
-@JsonKey(name: "klaybay_buyer_fee_basis_points") required int klaybay_buyer_fee_basis_points,
-@JsonKey(name: "klaybay_seller_fee_basis_points") required int klaybay_seller_fee_basis_points,
-@JsonKey(name: "dev_buyer_fee_basis_points") required int dev_buyer_fee_basis_points,
-@JsonKey(name: "dev_seller_fee_basis_points") required int dev_seller_fee_basis_points,
-@JsonKey(name: "item_attribute_stats") List? item_attribute_stats,
+@JsonKey(name: "external_link") String? externalLink,
+@JsonKey(name: "klaybay_buyer_fee_basis_points") required int klaybayBuyerFeeBasisPoints,
+@JsonKey(name: "klaybay_seller_fee_basis_points") required int klaybaySellerFeeBasisPoints,
+@JsonKey(name: "dev_buyer_fee_basis_points") required int devBuyerFeeBasisPoints,
+@JsonKey(name: "dev_seller_fee_basis_points") required int devSellerFeeBasisPoints,
+@JsonKey(name: "item_attribute_stats") List? itemAttributeStats,
 Game? game,
-@JsonKey(name: "min_listing_price") String? min_listing_price,
-@JsonKey(name: "max_listing_price") String? max_listing_price,
-@JsonKey(name: "min_sale_price") String? min_sale_price,
-@JsonKey(name: "max_sale_price") String? max_sale_price,
+@JsonKey(name: "min_listing_price") String? minListingPrice,
+@JsonKey(name: "max_listing_price") String? maxListingPrice,
+@JsonKey(name: "min_sale_price") String? minSalePrice,
+@JsonKey(name: "max_sale_price") String? maxSalePrice,
 required String status,
   }) = _ItemContract;
 
@@ -367,7 +367,7 @@ part 'game_detail.g.dart';
 abstract class GameDetail with _$GameDetail {
   const factory GameDetail({
     required Game game,
-@JsonKey(name: "item_contracts") required ItemContract item_contracts,
+@JsonKey(name: "item_contracts") required ItemContract itemContracts,
   }) = _GameDetail;
 
   factory GameDetail.fromJson(Map<String, dynamic> json) => _$GameDetailFromJson(json);
@@ -385,9 +385,9 @@ abstract class ItemMetadata with _$ItemMetadata {
   const factory ItemMetadata({
     String? name,
 String? description,
-@JsonKey(name: "external_url") String? external_url,
-@JsonKey(name: "animation_url") String? animation_url,
-@JsonKey(name: "youtube_url") String? youtube_url,
+@JsonKey(name: "external_url") String? externalUrl,
+@JsonKey(name: "animation_url") String? animationUrl,
+@JsonKey(name: "youtube_url") String? youtubeUrl,
 required List attributes,
   }) = _ItemMetadata;
 
@@ -405,7 +405,7 @@ part 'register_item_contract_dto.g.dart';
 abstract class RegisterItemContractDto with _$RegisterItemContractDto {
   const factory RegisterItemContractDto({
     required String address,
-@JsonKey(name: "game_id") String? game_id,
+@JsonKey(name: "game_id") String? gameId,
   }) = _RegisterItemContractDto;
 
   factory RegisterItemContractDto.fromJson(Map<String, dynamic> json) => _$RegisterItemContractDtoFromJson(json);
@@ -421,10 +421,10 @@ part 'chain_event_entity.g.dart';
 @freezed
 abstract class ChainEventEntity with _$ChainEventEntity {
   const factory ChainEventEntity({
-    @JsonKey(name: "block_number") required String block_number,
-@JsonKey(name: "log_index") required String log_index,
+    @JsonKey(name: "block_number") required String blockNumber,
+@JsonKey(name: "log_index") required String logIndex,
 required String address,
-@JsonKey(name: "tx_hash") required String tx_hash,
+@JsonKey(name: "tx_hash") required String txHash,
 required dynamic payload,
 required String status,
 required String log,
@@ -443,8 +443,8 @@ part 'item_string_attribute.g.dart';
 @freezed
 abstract class ItemStringAttribute with _$ItemStringAttribute {
   const factory ItemStringAttribute({
-    @JsonKey(name: "trait_type") required String trait_type,
-@JsonKey(name: "display_type") required String display_type,
+    @JsonKey(name: "trait_type") required String traitType,
+@JsonKey(name: "display_type") required String displayType,
 required String value,
   }) = _ItemStringAttribute;
 
@@ -461,10 +461,10 @@ part 'item_number_attribute.g.dart';
 @freezed
 abstract class ItemNumberAttribute with _$ItemNumberAttribute {
   const factory ItemNumberAttribute({
-    @JsonKey(name: "trait_type") required String trait_type,
-@JsonKey(name: "display_type") required String display_type,
+    @JsonKey(name: "trait_type") required String traitType,
+@JsonKey(name: "display_type") required String displayType,
 required int value,
-@JsonKey(name: "max_value") int? max_value,
+@JsonKey(name: "max_value") int? maxValue,
   }) = _ItemNumberAttribute;
 
   factory ItemNumberAttribute.fromJson(Map<String, dynamic> json) => _$ItemNumberAttributeFromJson(json);
@@ -480,10 +480,10 @@ part 'item_boost_percentage_attribute.g.dart';
 @freezed
 abstract class ItemBoostPercentageAttribute with _$ItemBoostPercentageAttribute {
   const factory ItemBoostPercentageAttribute({
-    @JsonKey(name: "trait_type") required String trait_type,
-@JsonKey(name: "display_type") required String display_type,
+    @JsonKey(name: "trait_type") required String traitType,
+@JsonKey(name: "display_type") required String displayType,
 required int value,
-@JsonKey(name: "max_value") int? max_value,
+@JsonKey(name: "max_value") int? maxValue,
   }) = _ItemBoostPercentageAttribute;
 
   factory ItemBoostPercentageAttribute.fromJson(Map<String, dynamic> json) => _$ItemBoostPercentageAttributeFromJson(json);
@@ -499,10 +499,10 @@ part 'item_boost_number_attribute.g.dart';
 @freezed
 abstract class ItemBoostNumberAttribute with _$ItemBoostNumberAttribute {
   const factory ItemBoostNumberAttribute({
-    @JsonKey(name: "trait_type") required String trait_type,
-@JsonKey(name: "display_type") required String display_type,
+    @JsonKey(name: "trait_type") required String traitType,
+@JsonKey(name: "display_type") required String displayType,
 required int value,
-@JsonKey(name: "max_value") int? max_value,
+@JsonKey(name: "max_value") int? maxValue,
   }) = _ItemBoostNumberAttribute;
 
   factory ItemBoostNumberAttribute.fromJson(Map<String, dynamic> json) => _$ItemBoostNumberAttributeFromJson(json);
@@ -518,8 +518,8 @@ part 'item_date_attribute.g.dart';
 @freezed
 abstract class ItemDateAttribute with _$ItemDateAttribute {
   const factory ItemDateAttribute({
-    @JsonKey(name: "trait_type") required String trait_type,
-@JsonKey(name: "display_type") required String display_type,
+    @JsonKey(name: "trait_type") required String traitType,
+@JsonKey(name: "display_type") required String displayType,
 required int value,
   }) = _ItemDateAttribute;
 
@@ -537,23 +537,23 @@ part 'item.g.dart';
 abstract class Item with _$Item {
   const factory Item({
     required String id,
-@JsonKey(name: "contract_address") required String contract_address,
-@JsonKey(name: "token_id") required String token_id,
+@JsonKey(name: "contract_address") required String contractAddress,
+@JsonKey(name: "token_id") required String tokenId,
 String? name,
 String? description,
 String? image,
 String? thumbnail,
-@JsonKey(name: "full_image") String? full_image,
-@JsonKey(name: "external_url") String? external_url,
-@JsonKey(name: "animation_url") String? animation_url,
-@JsonKey(name: "youtube_url") String? youtube_url,
+@JsonKey(name: "full_image") String? fullImage,
+@JsonKey(name: "external_url") String? externalUrl,
+@JsonKey(name: "animation_url") String? animationUrl,
+@JsonKey(name: "youtube_url") String? youtubeUrl,
 required String minter,
 required List attributes,
 ItemContract? contract,
-@JsonKey(name: "minter_account") required Account minter_account,
-@JsonKey(name: "listing_price") String? listing_price,
-@JsonKey(name: "listing_time") int? listing_time,
-@JsonKey(name: "expiration_time") int? expiration_time,
+@JsonKey(name: "minter_account") required Account minterAccount,
+@JsonKey(name: "listing_price") String? listingPrice,
+@JsonKey(name: "listing_time") int? listingTime,
+@JsonKey(name: "expiration_time") int? expirationTime,
   }) = _Item;
 
   factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
@@ -571,7 +571,7 @@ abstract class ViewerInfo with _$ViewerInfo {
   const factory ViewerInfo({
     required Account account,
 required bool owning,
-@JsonKey(name: "sellable_count") int? sellable_count,
+@JsonKey(name: "sellable_count") int? sellableCount,
   }) = _ViewerInfo;
 
   factory ViewerInfo.fromJson(Map<String, dynamic> json) => _$ViewerInfoFromJson(json);
@@ -591,9 +591,9 @@ abstract class ItemDetail with _$ItemDetail {
 Game? game,
 required Order listings,
 required Order offers,
-@JsonKey(name: "owner_count") required int owner_count,
-@JsonKey(name: "owner_account") Account? owner_account,
-@JsonKey(name: "viewer_info") ViewerInfo? viewer_info,
+@JsonKey(name: "owner_count") required int ownerCount,
+@JsonKey(name: "owner_account") Account? ownerAccount,
+@JsonKey(name: "viewer_info") ViewerInfo? viewerInfo,
   }) = _ItemDetail;
 
   factory ItemDetail.fromJson(Map<String, dynamic> json) => _$ItemDetailFromJson(json);
@@ -627,9 +627,9 @@ part 'item_count_per_game.g.dart';
 @freezed
 abstract class ItemCountPerGame with _$ItemCountPerGame {
   const factory ItemCountPerGame({
-    @JsonKey(name: "game_id") required String game_id,
-@JsonKey(name: "game_name") required Map<String,String> game_name,
-@JsonKey(name: "item_count") required int item_count,
+    @JsonKey(name: "game_id") required String gameId,
+@JsonKey(name: "game_name") required Map<String,String> gameName,
+@JsonKey(name: "item_count") required int itemCount,
   }) = _ItemCountPerGame;
 
   factory ItemCountPerGame.fromJson(Map<String, dynamic> json) => _$ItemCountPerGameFromJson(json);
@@ -645,8 +645,8 @@ part 'item_possession_status.g.dart';
 @freezed
 abstract class ItemPossessionStatus with _$ItemPossessionStatus {
   const factory ItemPossessionStatus({
-    @JsonKey(name: "min_listing_price") String? min_listing_price,
-@JsonKey(name: "max_listing_price") String? max_listing_price,
+    @JsonKey(name: "min_listing_price") String? minListingPrice,
+@JsonKey(name: "max_listing_price") String? maxListingPrice,
 required ItemCountPerGame games,
   }) = _ItemPossessionStatus;
 
@@ -663,9 +663,9 @@ part 'game_order_count.g.dart';
 @freezed
 abstract class GameOrderCount with _$GameOrderCount {
   const factory GameOrderCount({
-    @JsonKey(name: "game_id") required String game_id,
-@JsonKey(name: "game_name") required Map<String,String> game_name,
-@JsonKey(name: "order_count") required int order_count,
+    @JsonKey(name: "game_id") required String gameId,
+@JsonKey(name: "game_name") required Map<String,String> gameName,
+@JsonKey(name: "order_count") required int orderCount,
   }) = _GameOrderCount;
 
   factory GameOrderCount.fromJson(Map<String, dynamic> json) => _$GameOrderCountFromJson(json);
@@ -682,15 +682,15 @@ part 'profile.g.dart';
 abstract class Profile with _$Profile {
   const factory Profile({
     required Account account,
-@JsonKey(name: "item_possession_status") required ItemPossessionStatus item_possession_status,
-@JsonKey(name: "min_listing_price") required String min_listing_price,
-@JsonKey(name: "max_listing_price") required String max_listing_price,
-@JsonKey(name: "active_listing_counts") required GameOrderCount active_listing_counts,
-@JsonKey(name: "inactive_listing_counts") required GameOrderCount inactive_listing_counts,
-@JsonKey(name: "min_offer_price") required String min_offer_price,
-@JsonKey(name: "max_offer_price") required String max_offer_price,
-@JsonKey(name: "made_offer_counts") required GameOrderCount made_offer_counts,
-@JsonKey(name: "received_offer_counts") required GameOrderCount received_offer_counts,
+@JsonKey(name: "item_possession_status") required ItemPossessionStatus itemPossessionStatus,
+@JsonKey(name: "min_listing_price") required String minListingPrice,
+@JsonKey(name: "max_listing_price") required String maxListingPrice,
+@JsonKey(name: "active_listing_counts") required GameOrderCount activeListingCounts,
+@JsonKey(name: "inactive_listing_counts") required GameOrderCount inactiveListingCounts,
+@JsonKey(name: "min_offer_price") required String minOfferPrice,
+@JsonKey(name: "max_offer_price") required String maxOfferPrice,
+@JsonKey(name: "made_offer_counts") required GameOrderCount madeOfferCounts,
+@JsonKey(name: "received_offer_counts") required GameOrderCount receivedOfferCounts,
   }) = _Profile;
 
   factory Profile.fromJson(Map<String, dynamic> json) => _$ProfileFromJson(json);
@@ -706,8 +706,8 @@ part 'api_exception.g.dart';
 @freezed
 abstract class ApiException with _$ApiException {
   const factory ApiException({
-    @JsonKey(name: "status_code") required int statusCode,
-@JsonKey(name: "error_code") String? errorCode,
+    required int statuscode,
+String? errorcode,
 required String message,
 required String error,
 dynamic? extra,
@@ -750,35 +750,35 @@ abstract class CreateOrderDto with _$CreateOrderDto {
 required String exchange,
 required String maker,
 required String taker,
-@JsonKey(name: "maker_relayer_fee") required String maker_relayer_fee,
-@JsonKey(name: "taker_relayer_fee") required String taker_relayer_fee,
-@JsonKey(name: "maker_protocol_fee") required String maker_protocol_fee,
-@JsonKey(name: "taker_protocol_fee") required String taker_protocol_fee,
-@JsonKey(name: "maker_referrer_fee") required String maker_referrer_fee,
-@JsonKey(name: "fee_recipient") required String fee_recipient,
-@JsonKey(name: "fee_method") required int fee_method,
+@JsonKey(name: "maker_relayer_fee") required String makerRelayerFee,
+@JsonKey(name: "taker_relayer_fee") required String takerRelayerFee,
+@JsonKey(name: "maker_protocol_fee") required String makerProtocolFee,
+@JsonKey(name: "taker_protocol_fee") required String takerProtocolFee,
+@JsonKey(name: "maker_referrer_fee") required String makerReferrerFee,
+@JsonKey(name: "fee_recipient") required String feeRecipient,
+@JsonKey(name: "fee_method") required int feeMethod,
 required int side,
-@JsonKey(name: "sale_kind") required int sale_kind,
+@JsonKey(name: "sale_kind") required int saleKind,
 required String target,
-@JsonKey(name: "how_to_call") required int how_to_call,
+@JsonKey(name: "how_to_call") required int howToCall,
 String? calldata,
-@JsonKey(name: "replacement_pattern") String? replacement_pattern,
-@JsonKey(name: "static_target") required String static_target,
-@JsonKey(name: "static_extradata") String? static_extradata,
-@JsonKey(name: "payment_token") required String payment_token,
-@JsonKey(name: "base_price") required String base_price,
+@JsonKey(name: "replacement_pattern") String? replacementPattern,
+@JsonKey(name: "static_target") required String staticTarget,
+@JsonKey(name: "static_extradata") String? staticExtradata,
+@JsonKey(name: "payment_token") required String paymentToken,
+@JsonKey(name: "base_price") required String basePrice,
 required String extra,
-@JsonKey(name: "listing_time") required int listing_time,
-@JsonKey(name: "expiration_time") required int expiration_time,
+@JsonKey(name: "listing_time") required int listingTime,
+@JsonKey(name: "expiration_time") required int expirationTime,
 required String salt,
 required String quantity,
-@JsonKey(name: "english_auction_reserve_price") String? english_auction_reserve_price,
-@JsonKey(name: "current_bounty") String? current_bounty,
+@JsonKey(name: "english_auction_reserve_price") String? englishAuctionReservePrice,
+@JsonKey(name: "current_bounty") String? currentBounty,
 int? v,
 String? r,
 String? s,
-@JsonKey(name: "contract_address") required String contract_address,
-@JsonKey(name: "token_id") required String token_id,
+@JsonKey(name: "contract_address") required String contractAddress,
+@JsonKey(name: "token_id") required String tokenId,
   }) = _CreateOrderDto;
 
   factory CreateOrderDto.fromJson(Map<String, dynamic> json) => _$CreateOrderDtoFromJson(json);
@@ -798,9 +798,9 @@ abstract class Token with _$Token {
 required String name,
 required String symbol,
 required int decimals,
-@JsonKey(name: "image_url") String? image_url,
-@JsonKey(name: "klay_price") String? klay_price,
-@JsonKey(name: "usd_price") String? usd_price,
+@JsonKey(name: "image_url") String? imageUrl,
+@JsonKey(name: "klay_price") String? klayPrice,
+@JsonKey(name: "usd_price") String? usdPrice,
   }) = _Token;
 
   factory Token.fromJson(Map<String, dynamic> json) => _$TokenFromJson(json);
@@ -817,22 +817,22 @@ part 'item_activity.g.dart';
 abstract class ItemActivity with _$ItemActivity {
   const factory ItemActivity({
     required sssss id,
-@JsonKey(name: "item_id") required String item_id,
-@JsonKey(name: "activity_type") required String activity_type,
+@JsonKey(name: "item_id") required String itemId,
+@JsonKey(name: "activity_type") required String activityType,
 String? price,
 int? quantity,
 String? from,
 String? to,
-@JsonKey(name: "tx_hash") String? tx_hash,
-@JsonKey(name: "order_id") String? order_id,
+@JsonKey(name: "tx_hash") String? txHash,
+@JsonKey(name: "order_id") String? orderId,
 required String timestamp,
-@JsonKey(name: "listing_time") int? listing_time,
-@JsonKey(name: "expiration_time") int? expiration_time,
+@JsonKey(name: "listing_time") int? listingTime,
+@JsonKey(name: "expiration_time") int? expirationTime,
 Item? item,
-@JsonKey(name: "item_summary") ItemSummary? item_summary,
-@JsonKey(name: "payment_token_contract") Token? payment_token_contract,
-@JsonKey(name: "from_account") Account? from_account,
-@JsonKey(name: "to_account") Account? to_account,
+@JsonKey(name: "item_summary") ItemSummary? itemSummary,
+@JsonKey(name: "payment_token_contract") Token? paymentTokenContract,
+@JsonKey(name: "from_account") Account? fromAccount,
+@JsonKey(name: "to_account") Account? toAccount,
   }) = _ItemActivity;
 
   factory ItemActivity.fromJson(Map<String, dynamic> json) => _$ItemActivityFromJson(json);
@@ -849,27 +849,27 @@ part 'item_summary.g.dart';
 abstract class ItemSummary with _$ItemSummary {
   const factory ItemSummary({
     required String id,
-@JsonKey(name: "contract_address") required String contract_address,
-@JsonKey(name: "contract_schema") required String contract_schema,
-@JsonKey(name: "token_id") required String token_id,
+@JsonKey(name: "contract_address") required String contractAddress,
+@JsonKey(name: "contract_schema") required String contractSchema,
+@JsonKey(name: "token_id") required String tokenId,
 String? name,
 String? description,
 String? image,
 String? thumbnail,
-@JsonKey(name: "full_image") String? full_image,
-@JsonKey(name: "external_url") String? external_url,
-@JsonKey(name: "animation_url") String? animation_url,
-@JsonKey(name: "youtube_url") String? youtube_url,
+@JsonKey(name: "full_image") String? fullImage,
+@JsonKey(name: "external_url") String? externalUrl,
+@JsonKey(name: "animation_url") String? animationUrl,
+@JsonKey(name: "youtube_url") String? youtubeUrl,
 required String minter,
-@JsonKey(name: "created_at") required String created_at,
+@JsonKey(name: "created_at") required String createdAt,
 Game? game,
-@JsonKey(name: "current_listing") ItemActivity? current_listing,
-@JsonKey(name: "top_bid") ItemActivity? top_bid,
-@JsonKey(name: "top_offer") ItemActivity? top_offer,
-@JsonKey(name: "recent_bid") ItemActivity? recent_bid,
-@JsonKey(name: "recent_offer") ItemActivity? recent_offer,
-@JsonKey(name: "last_sale") ItemActivity? last_sale,
-@JsonKey(name: "viewer_info") ViewerInfo? viewer_info,
+@JsonKey(name: "current_listing") ItemActivity? currentListing,
+@JsonKey(name: "top_bid") ItemActivity? topBid,
+@JsonKey(name: "top_offer") ItemActivity? topOffer,
+@JsonKey(name: "recent_bid") ItemActivity? recentBid,
+@JsonKey(name: "recent_offer") ItemActivity? recentOffer,
+@JsonKey(name: "last_sale") ItemActivity? lastSale,
+@JsonKey(name: "viewer_info") ViewerInfo? viewerInfo,
   }) = _ItemSummary;
 
   factory ItemSummary.fromJson(Map<String, dynamic> json) => _$ItemSummaryFromJson(json);
@@ -922,7 +922,7 @@ abstract class ExchangeMetadataForAsset with _$ExchangeMetadataForAsset {
   const factory ExchangeMetadataForAsset({
     required  asset,
 required WyvernSchemaName schema,
-@JsonKey(name: "referrer_address") String? referrer_address,
+@JsonKey(name: "referrer_address") String? referrerAddress,
   }) = _ExchangeMetadataForAsset;
 
   factory ExchangeMetadataForAsset.fromJson(Map<String, dynamic> json) => _$ExchangeMetadataForAssetFromJson(json);
@@ -940,50 +940,50 @@ abstract class Order with _$Order {
   const factory Order({
     required String id,
 required String hash,
-@JsonKey(name: "item_id") required String item_id,
+@JsonKey(name: "item_id") required String itemId,
 required String exchange,
 required String maker,
 required String taker,
-@JsonKey(name: "maker_relayer_fee") required String maker_relayer_fee,
-@JsonKey(name: "taker_relayer_fee") required String taker_relayer_fee,
-@JsonKey(name: "maker_protocol_fee") required String maker_protocol_fee,
-@JsonKey(name: "taker_protocol_fee") required String taker_protocol_fee,
-@JsonKey(name: "maker_referrer_fee") required String maker_referrer_fee,
-@JsonKey(name: "fee_recipient") required String fee_recipient,
-@JsonKey(name: "fee_method") required int fee_method,
+@JsonKey(name: "maker_relayer_fee") required String makerRelayerFee,
+@JsonKey(name: "taker_relayer_fee") required String takerRelayerFee,
+@JsonKey(name: "maker_protocol_fee") required String makerProtocolFee,
+@JsonKey(name: "taker_protocol_fee") required String takerProtocolFee,
+@JsonKey(name: "maker_referrer_fee") required String makerReferrerFee,
+@JsonKey(name: "fee_recipient") required String feeRecipient,
+@JsonKey(name: "fee_method") required int feeMethod,
 required int side,
-@JsonKey(name: "sale_kind") required int sale_kind,
+@JsonKey(name: "sale_kind") required int saleKind,
 required String target,
-@JsonKey(name: "how_to_call") required int how_to_call,
+@JsonKey(name: "how_to_call") required int howToCall,
 String? calldata,
-@JsonKey(name: "replacement_pattern") String? replacement_pattern,
-@JsonKey(name: "static_target") required String static_target,
-@JsonKey(name: "static_extradata") String? static_extradata,
-@JsonKey(name: "payment_token") required String payment_token,
-@JsonKey(name: "base_price") required String base_price,
+@JsonKey(name: "replacement_pattern") String? replacementPattern,
+@JsonKey(name: "static_target") required String staticTarget,
+@JsonKey(name: "static_extradata") String? staticExtradata,
+@JsonKey(name: "payment_token") required String paymentToken,
+@JsonKey(name: "base_price") required String basePrice,
 required String extra,
-@JsonKey(name: "listing_time") required int listing_time,
-@JsonKey(name: "expiration_time") required int expiration_time,
+@JsonKey(name: "listing_time") required int listingTime,
+@JsonKey(name: "expiration_time") required int expirationTime,
 required String salt,
 required String quantity,
-@JsonKey(name: "english_auction_reserve_price") String? english_auction_reserve_price,
-@JsonKey(name: "current_bounty") String? current_bounty,
+@JsonKey(name: "english_auction_reserve_price") String? englishAuctionReservePrice,
+@JsonKey(name: "current_bounty") String? currentBounty,
 int? v,
 String? r,
 String? s,
 required bool cancelled,
 required bool finalized,
-@JsonKey(name: "marked_invalid") required bool marked_invalid,
-@JsonKey(name: "created_at") required String created_at,
-@JsonKey(name: "updated_at") required String updated_at,
+@JsonKey(name: "marked_invalid") required bool markedInvalid,
+@JsonKey(name: "created_at") required String createdAt,
+@JsonKey(name: "updated_at") required String updatedAt,
 Item? item,
-@JsonKey(name: "item_summary") ItemSummary? item_summary,
+@JsonKey(name: "item_summary") ItemSummary? itemSummary,
 required ExchangeMetadataForAsset metadata,
-@JsonKey(name: "maker_account") required Account maker_account,
-@JsonKey(name: "taker_account") required Account taker_account,
-@JsonKey(name: "fee_recipient_account") required Account fee_recipient_account,
-@JsonKey(name: "payment_token_contract") required Token payment_token_contract,
-@JsonKey(name: "waiting_for_best_counter_order") required bool waiting_for_best_counter_order,
+@JsonKey(name: "maker_account") required Account makerAccount,
+@JsonKey(name: "taker_account") required Account takerAccount,
+@JsonKey(name: "fee_recipient_account") required Account feeRecipientAccount,
+@JsonKey(name: "payment_token_contract") required Token paymentTokenContract,
+@JsonKey(name: "waiting_for_best_counter_order") required bool waitingForBestCounterOrder,
   }) = _Order;
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
@@ -999,16 +999,16 @@ part 'make_buy_order_request.g.dart';
 @freezed
 abstract class MakeBuyOrderRequest with _$MakeBuyOrderRequest {
   const factory MakeBuyOrderRequest({
-    @JsonKey(name: "token_address") required String token_address,
-@JsonKey(name: "token_id") required String token_id,
+    @JsonKey(name: "token_address") required String tokenAddress,
+@JsonKey(name: "token_id") required String tokenId,
 required int quantity,
-@JsonKey(name: "account_address") required String account_address,
-@JsonKey(name: "start_amount") required int start_amount,
-@JsonKey(name: "expiration_time") required int expiration_time,
-@JsonKey(name: "payment_token_address") required String payment_token_address,
-@JsonKey(name: "extra_bounty_basis_points") required int extra_bounty_basis_points,
-@JsonKey(name: "sell_order_id") String? sell_order_id,
-@JsonKey(name: "referrer_address") String? referrer_address,
+@JsonKey(name: "account_address") required String accountAddress,
+@JsonKey(name: "start_amount") required int startAmount,
+@JsonKey(name: "expiration_time") required int expirationTime,
+@JsonKey(name: "payment_token_address") required String paymentTokenAddress,
+@JsonKey(name: "extra_bounty_basis_points") required int extraBountyBasisPoints,
+@JsonKey(name: "sell_order_id") String? sellOrderId,
+@JsonKey(name: "referrer_address") String? referrerAddress,
   }) = _MakeBuyOrderRequest;
 
   factory MakeBuyOrderRequest.fromJson(Map<String, dynamic> json) => _$MakeBuyOrderRequestFromJson(json);
@@ -1027,31 +1027,31 @@ abstract class UnhashedOrder with _$UnhashedOrder {
     required String exchange,
 required String maker,
 required String taker,
-@JsonKey(name: "maker_relayer_fee") required String maker_relayer_fee,
-@JsonKey(name: "taker_relayer_fee") required String taker_relayer_fee,
-@JsonKey(name: "maker_protocol_fee") required String maker_protocol_fee,
-@JsonKey(name: "taker_protocol_fee") required String taker_protocol_fee,
-@JsonKey(name: "maker_referrer_fee") required String maker_referrer_fee,
-@JsonKey(name: "fee_recipient") required String fee_recipient,
-@JsonKey(name: "fee_method") required int fee_method,
+@JsonKey(name: "maker_relayer_fee") required String makerRelayerFee,
+@JsonKey(name: "taker_relayer_fee") required String takerRelayerFee,
+@JsonKey(name: "maker_protocol_fee") required String makerProtocolFee,
+@JsonKey(name: "taker_protocol_fee") required String takerProtocolFee,
+@JsonKey(name: "maker_referrer_fee") required String makerReferrerFee,
+@JsonKey(name: "fee_recipient") required String feeRecipient,
+@JsonKey(name: "fee_method") required int feeMethod,
 required int side,
-@JsonKey(name: "sale_kind") required int sale_kind,
+@JsonKey(name: "sale_kind") required int saleKind,
 required String target,
-@JsonKey(name: "how_to_call") required int how_to_call,
+@JsonKey(name: "how_to_call") required int howToCall,
 String? calldata,
-@JsonKey(name: "replacement_pattern") String? replacement_pattern,
-@JsonKey(name: "static_target") required String static_target,
-@JsonKey(name: "static_extradata") String? static_extradata,
-@JsonKey(name: "payment_token") required String payment_token,
-@JsonKey(name: "base_price") required String base_price,
+@JsonKey(name: "replacement_pattern") String? replacementPattern,
+@JsonKey(name: "static_target") required String staticTarget,
+@JsonKey(name: "static_extradata") String? staticExtradata,
+@JsonKey(name: "payment_token") required String paymentToken,
+@JsonKey(name: "base_price") required String basePrice,
 required String extra,
-@JsonKey(name: "listing_time") required int listing_time,
-@JsonKey(name: "expiration_time") required int expiration_time,
+@JsonKey(name: "listing_time") required int listingTime,
+@JsonKey(name: "expiration_time") required int expirationTime,
 required String salt,
 required String quantity,
-@JsonKey(name: "english_auction_reserve_price") String? english_auction_reserve_price,
+@JsonKey(name: "english_auction_reserve_price") String? englishAuctionReservePrice,
 required ExchangeMetadataForAsset metadata,
-@JsonKey(name: "waiting_for_best_counter_order") required bool waiting_for_best_counter_order,
+@JsonKey(name: "waiting_for_best_counter_order") required bool waitingForBestCounterOrder,
   }) = _UnhashedOrder;
 
   factory UnhashedOrder.fromJson(Map<String, dynamic> json) => _$UnhashedOrderFromJson(json);
@@ -1067,18 +1067,18 @@ part 'make_sell_order_request.g.dart';
 @freezed
 abstract class MakeSellOrderRequest with _$MakeSellOrderRequest {
   const factory MakeSellOrderRequest({
-    @JsonKey(name: "token_address") required String token_address,
-@JsonKey(name: "token_id") required String token_id,
+    @JsonKey(name: "token_address") required String tokenAddress,
+@JsonKey(name: "token_id") required String tokenId,
 required int quantity,
-@JsonKey(name: "account_address") required String account_address,
-@JsonKey(name: "start_amount") required int start_amount,
-@JsonKey(name: "end_amount") int? end_amount,
-@JsonKey(name: "wait_for_highest_bid") required bool wait_for_highest_bid,
-@JsonKey(name: "english_auction_reserve_price") int? english_auction_reserve_price,
-@JsonKey(name: "expiration_time") required int expiration_time,
-@JsonKey(name: "payment_token_address") required String payment_token_address,
-@JsonKey(name: "extra_bounty_basis_points") required int extra_bounty_basis_points,
-@JsonKey(name: "buyer_address") required String buyer_address,
+@JsonKey(name: "account_address") required String accountAddress,
+@JsonKey(name: "start_amount") required int startAmount,
+@JsonKey(name: "end_amount") int? endAmount,
+@JsonKey(name: "wait_for_highest_bid") required bool waitForHighestBid,
+@JsonKey(name: "english_auction_reserve_price") int? englishAuctionReservePrice,
+@JsonKey(name: "expiration_time") required int expirationTime,
+@JsonKey(name: "payment_token_address") required String paymentTokenAddress,
+@JsonKey(name: "extra_bounty_basis_points") required int extraBountyBasisPoints,
+@JsonKey(name: "buyer_address") required String buyerAddress,
   }) = _MakeSellOrderRequest;
 
   factory MakeSellOrderRequest.fromJson(Map<String, dynamic> json) => _$MakeSellOrderRequestFromJson(json);
@@ -1094,9 +1094,9 @@ part 'make_matching_order_request.g.dart';
 @freezed
 abstract class MakeMatchingOrderRequest with _$MakeMatchingOrderRequest {
   const factory MakeMatchingOrderRequest({
-    @JsonKey(name: "order_id") required String order_id,
-@JsonKey(name: "account_address") required String account_address,
-@JsonKey(name: "recipient_address") required String recipient_address,
+    @JsonKey(name: "order_id") required String orderId,
+@JsonKey(name: "account_address") required String accountAddress,
+@JsonKey(name: "recipient_address") required String recipientAddress,
   }) = _MakeMatchingOrderRequest;
 
   factory MakeMatchingOrderRequest.fromJson(Map<String, dynamic> json) => _$MakeMatchingOrderRequestFromJson(json);
@@ -1116,31 +1116,31 @@ abstract class UnsignedOrder with _$UnsignedOrder {
 required String exchange,
 required String maker,
 required String taker,
-@JsonKey(name: "maker_relayer_fee") required String maker_relayer_fee,
-@JsonKey(name: "taker_relayer_fee") required String taker_relayer_fee,
-@JsonKey(name: "maker_protocol_fee") required String maker_protocol_fee,
-@JsonKey(name: "taker_protocol_fee") required String taker_protocol_fee,
-@JsonKey(name: "maker_referrer_fee") required String maker_referrer_fee,
-@JsonKey(name: "fee_recipient") required String fee_recipient,
-@JsonKey(name: "fee_method") required int fee_method,
+@JsonKey(name: "maker_relayer_fee") required String makerRelayerFee,
+@JsonKey(name: "taker_relayer_fee") required String takerRelayerFee,
+@JsonKey(name: "maker_protocol_fee") required String makerProtocolFee,
+@JsonKey(name: "taker_protocol_fee") required String takerProtocolFee,
+@JsonKey(name: "maker_referrer_fee") required String makerReferrerFee,
+@JsonKey(name: "fee_recipient") required String feeRecipient,
+@JsonKey(name: "fee_method") required int feeMethod,
 required int side,
-@JsonKey(name: "sale_kind") required int sale_kind,
+@JsonKey(name: "sale_kind") required int saleKind,
 required String target,
-@JsonKey(name: "how_to_call") required int how_to_call,
+@JsonKey(name: "how_to_call") required int howToCall,
 String? calldata,
-@JsonKey(name: "replacement_pattern") String? replacement_pattern,
-@JsonKey(name: "static_target") required String static_target,
-@JsonKey(name: "static_extradata") String? static_extradata,
-@JsonKey(name: "payment_token") required String payment_token,
-@JsonKey(name: "base_price") required String base_price,
+@JsonKey(name: "replacement_pattern") String? replacementPattern,
+@JsonKey(name: "static_target") required String staticTarget,
+@JsonKey(name: "static_extradata") String? staticExtradata,
+@JsonKey(name: "payment_token") required String paymentToken,
+@JsonKey(name: "base_price") required String basePrice,
 required String extra,
-@JsonKey(name: "listing_time") required int listing_time,
-@JsonKey(name: "expiration_time") required int expiration_time,
+@JsonKey(name: "listing_time") required int listingTime,
+@JsonKey(name: "expiration_time") required int expirationTime,
 required String salt,
 required String quantity,
-@JsonKey(name: "english_auction_reserve_price") String? english_auction_reserve_price,
+@JsonKey(name: "english_auction_reserve_price") String? englishAuctionReservePrice,
 required ExchangeMetadataForAsset metadata,
-@JsonKey(name: "waiting_for_best_counter_order") required bool waiting_for_best_counter_order,
+@JsonKey(name: "waiting_for_best_counter_order") required bool waitingForBestCounterOrder,
   }) = _UnsignedOrder;
 
   factory UnsignedOrder.fromJson(Map<String, dynamic> json) => _$UnsignedOrderFromJson(json);
@@ -1156,10 +1156,10 @@ part 'item_owner.g.dart';
 @freezed
 abstract class ItemOwner with _$ItemOwner {
   const factory ItemOwner({
-    @JsonKey(name: "item_id") required String item_id,
+    @JsonKey(name: "item_id") required String itemId,
 required String owner,
 required String amount,
-@JsonKey(name: "owner_account") required Account owner_account,
+@JsonKey(name: "owner_account") required Account ownerAccount,
   }) = _ItemOwner;
 
   factory ItemOwner.fromJson(Map<String, dynamic> json) => _$ItemOwnerFromJson(json);
