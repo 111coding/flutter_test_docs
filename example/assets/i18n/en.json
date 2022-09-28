@@ -1,0 +1,694 @@
+{
+  "en": "English",
+  "ko": "Korean",
+  "language" : "Language",
+
+  "title": "Klaybay",
+  "home": {
+    "messageTitle": "THE NEW UNIVERSE FOR \nTHE KLAYTN-BASED GAME NFTS",
+    "message": "Klaybay is a Klaytn-based game NFT marketplace. \nDiscover extraordinary experiences\nfor gaming NFTs on Klaybay!",
+    "explore.button": "Explore Now",
+    "viewAll": "View All",
+    "trending": {
+      "title": "TRENDING GAMES",
+      "totalItems": "Total {count} Items"
+    },
+    "top": {
+      "title": "TOP TRADES"
+    },
+    "recent": {
+      "title": "RECENT SALES",
+      "headers": {
+        "price": "Price",
+        "seller": "Seller",
+        "buyer": "Buyer",
+        "txtime": "Transaction Time"
+      }
+    },
+    "alert": {
+      "message": "You're viewing data from the {target} network, but your wallet is connected to the {current} network.",
+      "unknown": "The current chain is unknown. Please, connect to another network to see the data."
+    }
+  },
+  "games": {
+    "tabLabels": {
+      "trending": "TRENDING GAMES",
+      "top": "TOP TRADES",
+      "recent": "RECENT SALES"
+    },
+    "trending.headers": ["24h Vol", "24h %", "Total Vol", "Floor price", "Owners", "Items"]
+  },
+  "game": {
+    "readMore": "Read more",
+    "readLess": "Read less",
+    "tabLabels": {
+      "all": "All",
+      "top": "Top Trades",
+      "recent": "Recent Sales"
+    },
+    "trending.headers": ["24h Vol", "24h %", "Total Vol", "Floor price", "Owners", "Items"],
+    "sortby": {
+      "listing_price:ASC": "Price: Low to High",
+      "listing_price:DESC": "Price: High to Low",
+      "expiration_time:DESC": "Ending Soon",
+      "listing_time:DESC": "Listed: New to Old",
+      "listing_time:ASC": "Listed: Old to New",
+      "created_at:DESC": "Created: New to Old",
+      "created_at:ASC": "Created: Old to New"
+    },
+    "noItemsFound": "No items found",
+    "search": {
+      "placeholder": "Search...",
+      "result": "{value} result"
+    }
+  },
+  "profile": {
+    "tabLabels": {
+      "nft": "Owned NFT",
+      "listing": "Listing",
+      "offer": "Offer",
+      "activity": "Activity"
+    },
+    "listingOptions": {
+      "on": "Active",
+      "off": "Inactive"
+    },
+    "offerOptions": {
+      "on": "Made",
+      "off": "Received"
+    },
+    "editName": {
+      "label": {
+        "error": {
+          "InvalidUsername": "You cannot include <{value}> in the nickname.",
+          "DuplicatedUsername": "<{value}> is already in use."
+        }
+      },
+      "toasts": {
+        "error": "error",
+        "success": "success"
+      }
+    },
+    "signStatements": {
+      "updateNickname": "update nickname",
+      "updateProfileImage": "update profile",
+      "updateProfileBanner": "update banner"
+    }
+  },
+  "sell": {
+    "title": "List item for sale",
+    "tabLabels": {
+      "fixed": "Fixed Price",
+      "auction": "Timed Auction"
+    },
+    "fixed": {
+      "price": "Price",
+      "duration": "Duration",
+      "reserveForBuyer": "Reserve for specific buyer"
+    },
+    "auction": {
+      "method": "Method",
+      "dutch": "Sell with declining price",
+      "english": "Sell to highest bidder",
+      "startingPrice": "Starting Price",
+      "endingPrice": "Ending Price",
+      "duration": "Duration",
+      "includeReservePrice": "Include \nreserve price",
+      "fees": "Fees"
+    },
+    "fees": {
+      "fees": "Fees",
+      "serviceFee": "Service Fee",
+      "creatorFee": "Creator Fee"
+    },
+    "button": "Complete Listing",
+    "notOwning": "Check you logged as a owner",
+    "notSellable": "You already listed"
+  },
+  "footer": {
+    "description": "A Klaytn-based game NFT marketplace <br />Copyrightⓒ 2022-present Klaybay Pte. Ltd. All rights reserved.",
+    "about": "User Guide",
+    "contact": "FAQ",
+    "help": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "baobab": {
+      "feedback": {
+        "label": "Please let us know if you have any suggestions or comments via email, {email}",
+        "email": "feedback@klaybay.io"
+      }
+    }
+  },
+  "pageNotFound": "Page not found",
+  "txExplorerNA": {
+    "title": "{chain} chain has no available transaction explorer",
+    "txHash": "transaction hash: {hash}"
+  },
+  "item": {
+    "fixedPrice": "Fixed price",
+    "dutch": "Estimated price",
+    "topBid": "Top bid",
+    "startBid": "Starting bid"
+  },
+  "itemCard": {
+    "topBid": "Top Bid",
+    "bid": "Bid",
+    "price": "Price",
+    "topOffer": "Top Offer",
+    "lastSale": "Last",
+    "timeLeft": "{time} Left"
+  },
+  "itemActivity": {
+    "noItemsFound": "No activity found"
+  },
+  "label": {
+    "game": "Game",
+    "games": "Games",
+    "profile": "Profile",
+    "price": "Price",
+    "transaction": "Transaction",
+    "time": "Time",
+    "item": "Item",
+    "sell": "Sell",
+    "seller": "Seller",
+    "buyer": "Buyer",
+    "transactionTime": "Transaction Time",
+    "items": "Items",
+    "owners": "Owners",
+    "floorPrice": "Floor Price",
+    "totalVol": "Total Vol",
+    "empty": "Empty",
+    "last": "Last",
+    "sortby": "Sort by",
+    "orderStatus": {
+      "status": "Status",
+      "buy_now": "Buy now",
+      "on_auction": "On Auction",
+      "new": "New",
+      "has_offers": "Has Offer"
+    },
+    "ownedBy": "Owned by",
+    "notAvailablePrice": "Not available price",
+    "expires": "Expires",
+    "description": "About The NFT",
+    "properties": "Properties",
+    "aboutCollection": "About The Game",
+    "createdBy": "Created by",
+    "details": "Details",
+    "contractAddress": "Contract Address",
+    "tokenId": "Token ID",
+    "tokenStandard": "Token Standard",
+    "blockchain": "Blockchain",
+    "klaytn": "Klaytn",
+    "listings": "Listings",
+    "offers": "Offers",
+    "listingsFrom": "From",
+    "offersFrom": "From",
+    "to": "To",
+    "listingForReservedTooltip": "Reserved listing for {address}",
+    "quantity": "Quantity",
+    "expiration": "Expiration",
+    "listingStatus": "Status",
+    "offerStatus": "Status",
+    "floorDifference": "Floor Diff.",
+    "event": "Event",
+    "itemActivity": "Item Activity",
+    "action": "Action",
+    "offerMade": "Made",
+    "offerReceived": "Received",
+    "status": "Status",
+    "valid": "Valid",
+    "invalid": "Invalid",
+    "cancelled": "Cancelled",
+    "finalized": "Finalized",
+    "expired": "Expired",
+    "unknown": "Unknown",
+    "apply": "Apply",
+    "clearAll": "Clear All",
+    "filter": "Filter",
+    "close": "Close"
+  },
+  "tooltip": {
+    "floorPrice": "Floor price: {price} KLAY",
+    "transactionTime": "DD MMM YYYY HH:mm",
+    "refresh": "Refresh",
+    "transfer": "Transfer",
+    "share": "Share"
+  },
+  "event": {
+    "filter": "Filter",
+    "minted": "Minted",
+    "sale": "Sale",
+    "transfer": "Transfer",
+    "list": "Listed",
+    "bid": "Bid",
+    "offer": "Offer",
+    "clearAll": "Clear All"
+  },
+  "wallet": {
+    "title": "Connect your wallet.",
+    "metamask": "MetaMask",
+    "kaikas": "Kaikas",
+    "klip": "Klip",
+    "klipLogin": "Login with Klip",
+    "walletconnect": "Walletconnect",
+    "button": {
+      "connect": "CONNECT",
+      "wrongChain": "SWITCH CHAIN"
+    },
+    "connect": "Connect",
+    "connected": "Connected",
+    "switchChain": "Switch to {chain}",
+    "shouldSwitchChain": "Switch chain to {chain} manually",
+    "pendingTx": "{count} pending tx",
+    "copyAddress": "Copy address",
+    "switchWallet": "Connect other wallet",
+    "disconnect": "Disconnect",
+    "clearCached": "Clear cached provider",
+    "log": {
+      "error": "Error: {message}",
+      "connected": "Wallet connected",
+      "disconnected": "Wallet disconnected",
+      "accountsChanged": "Accounts changed",
+      "chainChanged": "Chain changed",
+      "switchChainMobile": "Switch chain to {chain} manually at your mobile wallet",
+      "balanceReloaded": "Balance reloaded",
+      "refreshed": "Wallet refreshed"
+    }
+  },
+  "calendar": {
+    "headers": {
+      "expiration": "Expiration",
+      "range": "Custom Range"
+    },
+    "dateLabels": ["1 day", "3 days", "7 days", "1 month", "Select...", "Custom..."],
+    "custom": "Custom"
+  },
+  "action": { "clipboard": "{taget} copyied to clipboard" },
+  "word": {
+    "address": "Address"
+  },
+  "convert": {
+    "yourBalance": "Your Balance",
+    "result": "(Result: {value} {type})",
+    "from": "From",
+    "to": "To",
+    "placeholder": "Amount",
+    "convert": "Convert",
+    "tooLowBalanceToConvert": "Insufficient Balance. Please {deposit} your funds.",
+    "deposit": "deposit"
+  },
+  "modal": {
+    "convert": {
+      "titleWrap": "Convert your KLAY",
+      "titleUnwrap": "Convert your WKLAY",
+      "placeholder": "Amount",
+      "convert": "Convert"
+    },
+    "payment": {
+      "price": "Price",
+      "yourBalance": "Your Balance",
+      "minPriceWarning": "Offer must be at least the minimum price per unit of {minPrice} WKLAY",
+      "lowBalanceWarning": "Balance is lower than {price}, Convert or transfer"
+    },
+    "makeOffer": {
+      "title": "Make an offer",
+      "topOffer": "Top Offer",
+      "agreements": "By checking this box, I agree to Klaybay’s {termsOfService}",
+      "termsOfService": "Terms of Service",
+      "expirationDate": "Offer Expiration",
+      "button": {
+        "makeOffer": "Make Offer",
+        "deposit": "Deposit",
+        "convert": "Convert"
+      }
+    },
+    "txMakeOffer": {
+      "title": "Make your offer",
+      "unlockFunction": {
+        "subtitle": "Unlock trading functionality",
+        "description": "Submit a transaction with your wallet to unlock trading functionality for this collection. This only needs to be done once.",
+        "button": "Unlock"
+      },
+      "convert": {
+        "subtitle": "Convert your KLAY",
+        "description": "For compatibility, please convert your KLAY into \nwrapped KLAY (WKLAY).",
+        "button": "Convert"
+      },
+      "unlockCurrency": {
+        "subtitle": "Unlock currency",
+        "description": "Submit a transaction with your wallet to trade with this \ncurrency. This only needs to be done once.",
+        "button": "Unlock"
+      },
+      "sign": {
+        "subtitle": "Sign message",
+        "description": "Sign a message using your wallet to continue.",
+        "button": "Sign"
+      },
+      "done": {
+        "subtitle": "Request completed!",
+        "description": "You will be redirected to the item page.",
+        "button": "Close"
+      }
+    },
+    "deposit": {
+      "title": "Deposit crypto",
+      "subtitle": "Increase Balance",
+      "description": "Copy the wallet address and charge crypto.",
+      "button": {
+        "copy": "Copy"
+      }
+    },
+    "acceptOffer": {
+      "title": "Accept this offer",
+      "confirm": {
+        "subtitle": "Confirm this offer",
+        "description": "Are you sure you want to confirm this?",
+        "button": "Confirm"
+      },
+      "sign": {
+        "subtitle": "Sign a message",
+        "description": "Sign a message using your wallet to confirm this order.",
+        "button": "Sign"
+      }
+    },
+    "cancelOffer": {
+      "title": "Cancel your offer",
+      "confirm": {
+        "subtitle": "Request a cancellation",
+        "description": "Are you sure you want to cancel your offer?",
+        "button": "Confirm"
+      },
+      "sign": {
+        "subtitle": "Sign a message",
+        "description": "Sign a message using your wallet to cancel your order.",
+        "button": "Sign"
+      }
+    },
+    "cancelSell": {
+      "title": "Cancel your listing",
+      "confirm": {
+        "subtitle": "Confirm this cancellation",
+        "description": "Are you sure you want to cancel your listing?",
+        "button": "Confirm"
+      },
+      "sign": {
+        "subtitle": "Sign a message",
+        "description": "Sign a message using your wallet to cancel your listing.",
+        "button": "Sign"
+      },
+      "done": {
+        "subtitle": "Transaction completed!",
+        "description": "Cancel completed",
+        "button": "Close"
+      }
+    },
+    "checkoutBuy": {
+      "title": "Complete your checkout",
+      "price": "Price",
+      "confirm": {
+        "subtitle": "Confirm your payment",
+        "description": "Before buying an item, check the name and price. After that, confirm your payment.",
+        "button": "Confirm"
+      },
+      "sign": {
+        "subtitle": "Sign message",
+        "description": "To complete your checkout, sign message.",
+        "button": "Sign"
+      },
+      "done": {
+        "subtitle": "Transaction completed!",
+        "description": "Share your NFT to your friends",
+        "button": "Close"
+      }
+    },
+    "listingSell": {
+      "title": "Complete your listing",
+      "unlockFunction": {
+        "subtitle": "Unlock trading functionality",
+        "description": "Submit a transaction with your wallet to unlock selling functionality for this collection. This only needs to be done once.",
+        "button": "Unlock"
+      },
+      "approveForAll": {
+        "subtitle": "Approve this item for Sale",
+        "description": "Approve this NFT contract for use in trades.",
+        "button": "Approve"
+      },
+      "unlockCurrency": {
+        "subtitle": "Unlock currency",
+        "description": "Submit a transaction with your wallet to trade with this currency. This only needs to be done once.",
+        "button": "Unlock"
+      },
+      "sign": {
+        "subtitle": "Sign message",
+        "description": "To complete your listing, sign message.",
+        "button": "Sign"
+      },
+      "done": {
+        "subtitle": "You've listed",
+        "description": "Share your NFT to your friends",
+        "button": "Close"
+      }
+    },
+    "placeBid": {
+      "title": "Place a bid",
+      "topBid": "Top Bid",
+      "startBid": "Starting Bid",
+      "agreements": "By checking this box, I agree to Klaybay’s {termsOfService}",
+      "termsOfService": "Terms of Service",
+      "button": {
+        "placeBid": "Place Bid",
+        "convert": "Convert"
+      },
+      "tooLowBid": "Increase Bid Amount"
+    },
+    "checkoutItem": {
+      "total": "Total",
+      "creatorFees": "Creator Fees"
+    },
+    "transfer": {
+      "title": "Transfer your item",
+      "sign": {
+        "subtitle": "Input recipient",
+        "description": "Sign and send your item",
+        "sendTo": "Send to:",
+        "button": "Sign"
+      },
+      "done": {
+        "subtitle": "Transaction completed!",
+        "description": "Transfer completed",
+        "button": "Close"
+      }
+    }
+  },
+  "payment": {
+    "placeholder": "Amount in {payment}",
+    "priceTooLow": "{name} must be \ngreater than {minPrice}",
+    "priceTooHigh": "{name} must be \nless than {maxPrice}",
+    "mustLessThanStartPrice": "{name} must be \nless than starting price"
+  },
+  "message": {
+    "tooBigToUpload": "Too Big file size {value} to upload limited to {limit}",
+    "refreshMetadata": {
+      "success": "Requested to refresh meta data"
+    }
+  },
+  "buttons": {
+    "cancelSell": "Cancel",
+    "buyNow": {
+      "small": "Buy",
+      "big": "Buy now"
+    },
+    "placeBid": {
+      "small": "Bid",
+      "big": "Place bid"
+    },
+    "sell": "Sell",
+    "makeOffer": "Make offer",
+    "acceptOffer": "Accept",
+    "cancelOffer": "Cancel"
+  },
+  "tx": {
+    "createSellOrder": {
+      "message": "Signing...",
+      "success": "Succeeded listing",
+      "error": "Error while listing sell order"
+    },
+    "createBuyOrder": {
+      "message": "Signing...",
+      "success": "Succeeded making offer",
+      "error": "Error while making offer"
+    },
+    "cancelSell": {
+      "message": "Signing...",
+      "success": "Succeeded canceling",
+      "error": "Error while canceling sell"
+    },
+    "buyNow": {
+      "message": "Signing...",
+      "success": "Succeeded buying",
+      "error": "Error while buying"
+    },
+    "placeBid": {
+      "message": "Signing...",
+      "success": "Succeeded bidding",
+      "error": "Error while bidding"
+    },
+    "cancelOffer": {
+      "message": "Signing...",
+      "success": "Succeeded canceling offer",
+      "error": "Error while canceling offer"
+    },
+    "acceptOffer": {
+      "message": "Signing...",
+      "success": "Accepted offer",
+      "error": "Error while accepting offer"
+    },
+    "initializeProxy": {
+      "message": "Registering...",
+      "success": "Succeeded initializeProxy",
+      "error": "Error while initializeProxy"
+    },
+    "setApprovalForAll": {
+      "message": "Approve for...",
+      "success": "Succeeded setApprovalForAll",
+      "error": "Error while setApprovalForAll"
+    },
+    "unlockCurrency": {
+      "message": "Unlocking currency...",
+      "success": "Succeeded unlockCurrency",
+      "error": "Error while unlockCurrency"
+    },
+    "wrapKlay": {
+      "message": "Converting...",
+      "success": "Succeeded convert wraped KLAY",
+      "error": "Error while converting WKLAY",
+      "lowAmount": "Minimum {value} WKLAY needs"
+    },
+    "unwrapWKlay": {
+      "message": "Unwraping...",
+      "success": "Succeeded unwraping WKLAY",
+      "error": "Error while unwraping WKLAY"
+    },
+    "transfer": {
+      "message": "Transfering...",
+      "success": "Succeeded tranfer",
+      "error": "Error while tranfering"
+    }
+  },
+  "slider": {
+    "minPlaceholder": "Min",
+    "maxPlaceholder": "Max"
+  },
+  "input": {
+    "address": {
+      "placeholder": "Address",
+      "invalid": "invalid address"
+    }
+  },
+  "share": {
+    "link": "Copy link",
+    "facebook": "Share on Facebook",
+    "twitter": "Share to Twitter",
+    "template": {
+      "text": "Let's have a look at the Game NFT I shared! 👀 🕹️ \nFind more at Klaybay 👉 {url}",
+      "hashtags": "klaybay,klaytn,NFTs,GameNFT,NFTCollection",
+      "quote": "Let's have a look at the Game NFT I shared! 👀 🕹️ \nFind more at Klaybay 👉 {url}"
+    }
+  },
+  "countDown": {
+    "saleEnds": "Sale ends",
+    "months": "Months",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "floorPrice": {
+    "above": "{value} \nabove",
+    "same": "Same to \nthe floor price",
+    "below": "{value} \nbelow"
+  },
+  "klaybay-js": {
+    "OrdersMustOppositeSideError": "Must be opposite-side",
+    "OrdersMustSameFeeMethodError": "Must use same fee method",
+    "OrdersMustSamePaymentTokenError": "Must use same payment token",
+    "OrdersSellTakerError": "Sell taker must be null or matching buy maker",
+    "OrdersBuyTakerError": "Buy taker must be null or matching sell maker",
+    "OrdersMakerTakerNotMatchingError": "One order must be maker and the other must be taker",
+    "OrdersTargetError": "Must match target",
+    "OrdersHowtoCallError": "Must match how-to-call",
+    "OrdersBuyTimeError": "Buy-side order is set in the future or expired",
+    "OrdersSellTimeError": "Sell-side order is set in the future or expired",
+    "OrdersCheckSystemClockError": "Error creating your order. Check that your system clock is set to the current date and time before you try again.",
+    "OrderCalldataCanMatchError": "Unable to match offer data with auction data.",
+    "ABINotFoundMethodError": "ABI {value} not found",
+    "DeclinedToAutorizeBuyError": "You declined to authorize your buy/offer",
+    "DeclinedToAutorizeSellError": "You declined to authorize your sell/auction",
+    "NeedAtLeastOneSellOrderError": "Need to make at least one sell order",
+    "NeedAtLeastOneAssetOrderError": "Need at least one asset to create orders for",
+    "NotSameFactoryContractAddressError": "All assets must be on the same factory contract address",
+    "DeclinedToAthorizeFactorySellError": "You declined to authorize your auction, or your web3 provider can't sign using personal_sign. Try 'web3-provider-engine' and make sure a mnemonic is set. Just a reminder: there's no gas needed anymore to mint tokens!",
+    "IsApprovedForAllError": "Couldn't get permission to approve these tokens for trading. Their contract might not be implemented correctly. Please contact the developer!",
+    "MissingArgmuentFindingOwnerError": "Missing an argument for finding the owner of this asset",
+    "MissingOwnershipSchemaError": "Missing ownership schema for this asset type",
+    "FailedGetCurrentOwnerError": "Unable to get current owner from smart contract",
+    "TotalBountyTooLargeError": "Total bounty exceeds the maximum for this asset type {value} Remember that Klaybay will add {value}% for referrers with Klaybay accounts!",
+    "KlaybaySellerBountyTooLargeError": "Total bounty exceeds the maximum for this asset type {maxTotalBountyPercent} Remember that Klaybay will add {klaybaySellerBountyPercent}% for referrers with Klaybay accounts!",
+    "OrderHashMismatchError": "Order couldn't be validated by the exchange due to a hash mismatch. Make sure your wallet is on the right network!",
+    "UninitializedProxyAddressError": "Uninitialized account",
+    "GetProxyChainError": "Couldn't retrieve your account from the blockchain - make sure you're on the correct blockchain network!",
+    "InitializeProxyAddressError": "Failed to initialize your account :( Please restart your wallet/browser and try again!",
+    "InsufficientWrappedBalanceError": "Insufficient balance. You may need to WKLAY.",
+    "InsufficientBalanceError": "Insufficient balance.",
+    "ValidateBuyOrderError": "Failed to validate buy order parameters. Make sure you're on the right network!",
+    "TooLargeFeesError": "Invalid buyer/seller fees: must be less than {value}%",
+    "NegativeFeesError": "Invalid buyer/seller fees: must be at least 0%",
+    "LeastExpirationTimeFromNowOrZeroError": "Expiration time must be at least {value} seconds from now, or zero (non-expiring).",
+    "ListingTimeCannotPastError": "Listing time cannot be in the past.",
+    "ListingTimeMustBeforeExpirationTimeError": "Listing time must be before the expiration time.",
+    "EnglishAuctionsMustHaveExpirationTimeError": "English auctions must have an expiration time.",
+    "ExpirationTimeMustSecondsError": "Expiration timestamp must be a whole number of seconds",
+    "NegativeStartinPriceError": "Starting price must be a number >= 0",
+    "NotFoundPaymentTokenError": "No KIP7/ERC-20 token found for {value}",
+    "EnglishAuctionsMustUseWrappedTokenError": "English auctions must use WKLAY or an KIP7/ERC-20 token.",
+    "OffersMustUseWrappedTokenError": "Offers must use WKLAY or an KIP7/ERC-20 token.",
+    "EndPriceMustLessOrEqualStartPriceError": "End price must be less than or equal to the start price.",
+    "ExpirationTimeMustSetVaringPriceError": "Expiration time must be set if order will change in price.",
+    "ReservingPriceMustGreaterOrEqualStartPrice": "Reserve price must be greater than or equal to the start amount.",
+    "BuyerBalanceNotEnoughToBuyError": "Buyer has not enough funds to buy.",
+    "YourBalanceNotEnoughToBuyError": "You have not enough balance to buy.",
+    "NetworkRejectedTransactionError": "Oops, the blockchain network rejected this transaction. The exact error was {value}",
+    "UserDeniedTransactionError": "Failed to authorize transaction: {value}",
+    "UnsupportedAssetSchemaError": "Trading for this asset ({value}) is not yet supported. Please contact us or check back later!",
+    "InvalidBuyOrderMatchError": "Invalid buy order. It may have recently been removed. Please refresh the page and try again!",
+    "InvalidSellOrderMatchError": "Invalid sell order. It may have recently been removed. Please refresh the page and try again!",
+    "MatchingOrderError": "Error matching this listing: {value}. Please contact the maker or try again later!",
+    "InvalidOrderMetatDataError": "Invalid order metadata",
+    "WhitelistingOnlyforNFTError": "Whitelisting only available for non-fungible assets.",
+    "FailedValidateSellOrderParametersError": "Failed to validate sell order parameters. Make sure you're on the right network!",
+    "UnexpectedSchemaNameError": "unexpected schemaName {value}",
+    "NotOwnerError": "You don't own enough to do that ({minAmount} base units of {address} {assetId})",
+    "NoWalletAddressError": "No wallet address found",
+    "InvalidWalletAddressError": "Invalid wallet address",
+    "NotNullWalletAddressError": "Wallet cannot be the null address"
+  },
+  "walletError": {
+    "invalidInput": "Invalid input.",
+    "resourceNotFound": "Resource not found.",
+    "resourceUnavailable": "Resource unavailable.",
+    "transactionRejected": "Transaction rejected.",
+    "methodNotSupported": "Method not supported.",
+    "limitExceeded": "Request limit exceeded.",
+    "parse": "Invalid JSON was received by the server. An error occurred on the server while parsing the JSON text.",
+    "invalidRequest": "The JSON sent is not a valid Request object.",
+    "methodNotFound": "The method does not exist / is not available.",
+    "invalidParams": "Invalid method parameter(s).",
+    "internal": "Internal JSON-RPC error.",
+    "userRejectedRequest": "User rejected the request.",
+    "unauthorized": "The requested account and/or method has not been authorized by the user.",
+    "unsupportedMethod": "The requested method is not supported by this blockchain provider.",
+    "disconnected": "The provider is disconnected from all chains.",
+    "chainDisconnected": "The provider is disconnected from the specified chain.",
+    "locked": "Unlock your wallet."
+  }
+}

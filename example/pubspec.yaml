@@ -23,7 +23,7 @@ dev_dependencies:
 
   # MUST
   build_runner:
-  test_docs:
+  i18n:
     path: ../
 
 

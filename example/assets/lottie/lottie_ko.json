@@ -1,0 +1,708 @@
+{
+  "en": "영어",
+  "ko": "한국어",
+  "language": "언어",
+
+  "title": "Klaybay",
+  "home": {
+    "messageTitle": "클레이베이는 클레이튼 기반의 \n게임 특화 NFT 마켓플레이스입니다.",
+    "message": "WEB3 게임 생태계 참여자들의 \n안전하고 편리한 NFT 거래를 돕습니다.\n클레이베이에서 게임 NFT를 위한 특별한 서비스를 경험해 보세요!",
+    "explore.button": "NFT 보러가기",
+    "viewAll": "전체보기",
+    "trending": {
+      "title": "인기 게임",
+      "totalItems": "전체 {count} 아이템"
+    },
+    "top": {
+      "title": "최고가 거래 NFT"
+    },
+    "recent": {
+      "title": "최신 거래 NFT",
+      "headers": {
+        "price": "가격",
+        "seller": "판매자",
+        "buyer": "구매자",
+        "txtime": "거래 시간"
+      }
+    },
+    "alert": {
+      "message": "{target} 체인의 데이터를 보기 위해서는 {current} 체인이 아닌 {target} 체인으로 지갑을 변경해주세요.",
+      "unknown": "알 수 없는 체인에 접속되어있습니다. 지갑의 체인을 변경해주세요."
+    }
+  },
+  "games": {
+    "tabLabels": {
+      "trending": "인기 게임 순위",
+      "top": "최고가 거래 NFT",
+      "recent": "최신 거래 NFT"
+    },
+    "trending.headers": [
+      "24시간 거래량",
+      "24시간 %",
+      "전체 거래량",
+      "바닥가",
+      "소유자 수",
+      "아이템 수"
+    ]
+  },
+  "game": {
+    "readMore": "펼쳐보기",
+    "readLess": "접어보기",
+    "tabLabels": {
+      "all": "전체보기",
+      "top": "최고가 거래",
+      "recent": "최신 거래"
+    },
+    "trending.headers": [
+      "24시간 거래량",
+      "24시간 %",
+      "전체 거래량",
+      "바닥가",
+      "소유자 수",
+      "아이템 수"
+    ],
+    "sortby": {
+      "listing_price:ASC": "낮은 가격순",
+      "listing_price:DESC": "높은 가격순",
+      "expiration_time:DESC": "판매 마감순",
+      "listing_time:DESC": "판매등록 : 최근순",
+      "listing_time:ASC": "핀매등록 : 오래된순",
+      "created_at:DESC": "창작 : 최근순",
+      "created_at:ASC": "창작 : 오래된순"
+    },
+    "noItemsFound": "아이템이 없습니다.",
+    "search": {
+      "placeholder": "검색어 입력...",
+      "result": "{value}개 검색"
+    }
+  },
+  "profile": {
+    "tabLabels": {
+      "nft": "보유 NFT",
+      "listing": "판매 등록",
+      "offer": "제안",
+      "activity": "활동 기록"
+    },
+    "listingOptions": {
+      "on": "활성",
+      "off": "비활성"
+    },
+    "offerOptions": {
+      "on": "보낸 제안",
+      "off": "받은 제안"
+    },
+    "editName": {
+      "label": {
+        "error": {
+          "InvalidUsername": "<{value}>이(가) 포함된 닉네임은 사용 할 수 없습니다.",
+          "DuplicatedUsername": "<{value}>은(는) 이미 사용 중입니다."
+        }
+      },
+      "toasts": {
+        "error": "실패",
+        "success": "성공"
+      }
+    },
+    "signStatements": {
+      "updateNickname": "update nickname",
+      "updateProfileImage": "update profile",
+      "updateProfileBanner": "update banner"
+    }
+  },
+  "sell": {
+    "title": "NFT 판매 등록",
+    "tabLabels": {
+      "fixed": "고정 가격",
+      "auction": "시간제 경매"
+    },
+    "fixed": {
+      "price": "판매 가격",
+      "duration": "판매 기간",
+      "reserveForBuyer": "특정 구매자를 위한 \n예약판매"
+    },
+    "auction": {
+      "method": "방법",
+      "dutch": "하향식 경매 (Dutch Auction)",
+      "english": "최고가 경매 (English Auction)",
+      "startingPrice": "시작 가격",
+      "endingPrice": "마감 가격",
+      "duration": "판매 기간",
+      "includeReservePrice": "최저 낙찰가 설정",
+      "fees": "수수료"
+    },
+    "fees": {
+      "fees": "수수료",
+      "serviceFee": "서비스 수수료",
+      "creatorFee": "크리에이터 수수료"
+    },
+    "button": "판매 등록하기",
+    "notOwning": "판매 등록할 NFT의 소유자가 아닙니다.",
+    "notSellable": "이미 판매 등록되었습니다."
+  },
+  "footer": {
+    "description": "클레이튼 기반의 게임 특화 NFT 마켓플레이스 \nCopyrightⓒ 2022-present Klaybay Pte. Ltd. All rights reserved.",
+    "about": "이용 가이드",
+    "contact": "자주하는 질문",
+    "help": "개인정보 보호정책",
+    "termsOfService": "이용약관",
+    "baobab": {
+      "feedback": {
+        "label": "프로젝트에 대한 의견을 {email}로 알려주세요.",
+        "email": "feedback@klaybay.io"
+      }
+    }
+  },
+  "pageNotFound": "페이지가 없습니다.",
+  "txExplorerNA": {
+    "title": "{chain} 체인은 체인 탐색기를 제공하지 않습니다.",
+    "txHash": "트랜젝션 해쉬: {hash}"
+  },
+  "item": {
+    "fixedPrice": "고정 가격",
+    "dutch": "예상 가격",
+    "topBid": "최고 입찰가",
+    "startBid": "경매 시작가"
+  },
+  "itemCard": {
+    "topBid": "최고 입찰가",
+    "bid": "경매",
+    "price": "가격",
+    "topOffer": "최고 제안가",
+    "lastSale": "직전 가격",
+    "timeLeft": "{time} 남음"
+  },
+  "itemActivity": {
+    "noItemsFound": "검색된 결과가 없습니다."
+  },
+  "label": {
+    "game": "게임",
+    "games": "Games",
+    "profile": "프로필",
+    "price": "가격",
+    "transaction": "거래",
+    "time": "시간",
+    "item": "아이템명",
+    "sell": "판매",
+    "seller": "판매자",
+    "buyer": "구매자",
+    "transactionTime": "거래 시간",
+    "items": "아이템 수",
+    "owners": "소유자",
+    "floorPrice": "바닥가",
+    "totalVol": "총 거래량",
+    "empty": "검색된 아이템이 없습니다.",
+    "last": "이전 가격",
+    "sortby": "정렬",
+    "orderStatus": {
+      "status": "상태",
+      "buy_now": "바로 구매 아이템",
+      "on_auction": "경매 중 아이템",
+      "new": "새로운 아이템",
+      "has_offers": "가격 제안 아이템"
+    },
+    "ownedBy": "소유자",
+    "notAvailablePrice": "가격정보 없음",
+    "expires": "만료",
+    "description": "NFT 소개",
+    "properties": "속성",
+    "aboutCollection": "게임 소개",
+    "createdBy": "크리에이터",
+    "details": "컨트랙트 정보",
+    "contractAddress": "컨트랙트 주소",
+    "tokenId": "토큰 ID",
+    "tokenStandard": "토큰 표준",
+    "blockchain": "블록체인",
+    "klaytn": "Klaytn",
+    "listings": "리스팅",
+    "offers": "오퍼",
+    "listingsFrom": "판매자",
+    "offersFrom": "제안자",
+    "to": "To",
+    "listingForReservedTooltip": "Reserved for {address}",
+    "quantity": "수량",
+    "expiration": "만료일",
+    "listingStatus": "상태",
+    "offerStatus": "상태",
+    "floorDifference": "바닥가 대비",
+    "event": "이벤트",
+    "itemActivity": "거래 이력",
+    "action": "타입",
+    "offerMade": "제안 요청됨",
+    "offerReceived": "제안 승인됨",
+    "status": "상태",
+    "valid": "유효한 아이템",
+    "invalid": "비유효한 아이템",
+    "cancelled": "취소된",
+    "finalized": "Finalized",
+    "expired": "만료된",
+    "unknown": "알수 없는",
+    "apply": "적용하기",
+    "clearAll": "모두 삭제",
+    "filter": "필터",
+    "close": "닫기"
+  },
+  "tooltip": {
+    "floorPrice": "바닥가: {price} KLAY",
+    "transactionTime": "YYYY.MM.DD HH:mm",
+    "refresh": "새로고침",
+    "transfer": "전송하기",
+    "share": "공유하기"
+  },
+  "event": {
+    "filter": "필터",
+    "minted": "발행",
+    "sale": "판매",
+    "transfer": "전송",
+    "list": "판매 등록",
+    "bid": "경매",
+    "offer": "가격 제안",
+    "clearAll": "모두 삭제"
+  },
+  "wallet": {
+    "title": "지갑을 연결하세요",
+    "metamask": "MetaMask",
+    "kaikas": "Kaikas",
+    "klip": "Klip",
+    "klipLogin": "Klip으로 로그인",
+    "walletconnect": "Walletconnect",
+    "button": {
+      "connect": "지갑 연결",
+      "wrongChain": "체인 변경"
+    },
+    "connect": "지갑 연결하기",
+    "connected": "지갑 연결됨",
+    "switchChain": "체인 변경 {chain}",
+    "shouldSwitchChain": "{chain} 체인으로 변경하세요.",
+    "pendingTx": "{count} 보류 tx",
+    "copyAddress": "주소 복사",
+    "switchWallet": "다른 지갑 연결",
+    "disconnect": "연결 해제",
+    "clearCached": "clear cached provider",
+    "log": {
+      "error": "오류: {message}",
+      "connected": "지갑이 연결되었습니다.",
+      "disconnected": "지갑 연결이 해제되었습니다.",
+      "accountsChanged": "계정이 변경되었습니다.",
+      "chainChanged": "체인이 변경되었습니다.",
+      "switchChainMobile": "{chain} 체인으로 모바일 지갑에서 변경하세요.",
+      "balanceReloaded": "잔고를 갱신했습니다.",
+      "refreshed": "지갑 상태를 갱신했습니다."
+    }
+  },
+  "calendar": {
+    "headers": {
+      "expiration": "종료일 선택",
+      "range": "기간 직접 설정"
+    },
+    "dateLabels": ["1일", "3일", "7일", "한 달", "선택하기...", "직접설정..."],
+    "custom": "기간 직접 설정"
+  },
+  "action": { "clipboard": "{taget}를 클립보드에 복사했습니다." },
+  "word": {
+    "address": "지갑 주소"
+  },
+  "convert": {
+    "yourBalance": "잔액",
+    "result": "(변환 후 : {value} {type})",
+    "from": "변환 전",
+    "to": "변환 후",
+    "placeholder": "변환 금액",
+    "convert": "변환하기",
+    "tooLowBalanceToConvert": "잔액이 부족합니다. {deposit}",
+    "deposit": "가상자산을 입금해주세요."
+  },
+  "modal": {
+    "convert": {
+      "titleWrap": "KLAY 변환하기",
+      "titleUnwrap": "WKLAY 변환하기",
+      "placeholder": "Amount",
+      "convert": "변환하기"
+    },
+    "payment": {
+      "price": "가격",
+      "yourBalance": "현재 잔액",
+      "minPriceWarning":  "입찰가는 최소 {minPrice} WKLAY 보다 높아야 합니다.",
+      "lowBalanceWarning": "잔고가 {price} 보다 작습니다. 변환하거나 지갑으로 전송하세요."
+    },
+    "makeOffer": {
+      "title": "가격 제안하기",
+      "topOffer": "최고 제안가",
+      "agreements": "Klaybay의 {termsOfService}에 동의합니다.",
+      "termsOfService": "이용약관",
+      "expirationDate": "제안 만료일",
+      "button": {
+        "makeOffer": "제안하기",
+        "deposit": "입금하기",
+        "convert": "변환하기"
+      }
+    },
+    "txMakeOffer": {
+      "title": "제안 등록하기",
+      "unlockFunction": {
+        "subtitle": "거래 기능 잠금해제",
+        "description": "NFT의 거래 기능을 잠금해제 하기 위해 최초 1회 지갑을 통해 승인을 진행해 주세요.",
+        "button": "해제하기"
+      },
+      "convert": {
+        "subtitle": "KLAY 변환",
+        "description": "경매 입찰 및 가격 제안을 위해\nKLAY를 1:1로 래핑한 WKLAY로 변환합니다.",
+        "button": "변환하기"
+      },
+      "unlockCurrency": {
+        "subtitle": "가상자산 거래 등록",
+        "description": "선택한 가상자산으로 거래하기 위해 최초 1회 지갑을 통해 승인을 진행해 주세요.",
+        "button": "등록하기"
+      },
+      "sign": {
+        "subtitle": "지갑에서 서명",
+        "description": "경매 낙찰 또는 가격 제안 수락 시 제안가를 지불하고 NFT를 구매하게 됩니다.",
+        "button": "서명하기"
+      },
+      "done": {
+        "subtitle": "제안 등록 완료",
+        "description": "행운을 빕니다! 아이템 페이지로 돌아갑니다.",
+        "button": "확인"
+      }
+    },
+    "deposit": {
+      "title": "가상자산 입금",
+      "subtitle": "잔고 늘리기",
+      "description": "지갑 주소를 복사하여 가상자산을 충전해 주세요.",
+      "button": {
+        "copy": "복사하기"
+      }
+    },
+    "acceptOffer": {
+      "title": "제안 수락하기",
+      "confirm": {
+        "subtitle": "제안 확인",
+        "description": "NFT 아이템과 제안 가격을 확인해 주세요.",
+        "button": "수락하기"
+      },
+      "sign": {
+        "subtitle": "지갑에서 서명",
+        "description": "경매 입찰가 및 가격 제안을 수락하여 주문을 체결하는데 동의합니다.",
+        "button": "서명하기"
+      }
+    },
+    "cancelOffer": {
+      "title": "제안 취소하기",
+      "confirm": {
+        "subtitle": "취소 요청하기",
+        "description": "오퍼를 정말 취소하시겠습니까?",
+        "button": "취소하기"
+      },
+      "sign": {
+        "subtitle": "지갑에서 서명",
+        "description": "경매 입찰 또는 가격 제안을 취소합니다.",
+        "button": "서명하기"
+      }
+    },
+    "cancelSell": {
+      "title": "판매 취소하기",
+      "confirm": {
+        "subtitle": "취소 확인",
+        "description": "등록된 NFT의 판매를 취소하시겠습니까?",
+        "button": "취소하기"
+      },
+      "sign": {
+        "subtitle": "지갑에서 서명",
+        "description": "등록된 NFT의 판매를 취소합니다.",
+        "button": "서명하기"
+      },
+      "done": {
+        "subtitle": "취소 완료",
+        "description": "NFT의 판매가 취소되었습니다.",
+        "button": "확인"
+      }
+    },
+    "checkoutBuy": {
+      "title": "구매하기",
+      "price": "가격",
+      "confirm": {
+        "subtitle": "구매 내용 확인",
+        "description": "구매할 아이템과 가격을 확인하고 구매를 확정해주세요.",
+        "button": "확정하기"
+      },
+      "sign": {
+        "subtitle": "지갑에서 서명",
+        "description": "구매할 아이템과 가격을 확인하였으며 구매를 확정합니다.",
+        "button": "서명하기"
+      },
+      "done": {
+        "subtitle": "거래 완료!",
+        "description": "구매한 NFT를 친구들과 공유해보세요.",
+        "button": "확인"
+      }
+    },
+    "listingSell": {
+      "title": "판매 등록하기",
+      "unlockFunction": {
+        "subtitle": "거래 기능 잠금해제",
+        "description": "NFT의 거래 기능을 잠금해제 하기 위해 최초 1회 지갑을 통해 승인을 진행해 주세요.",
+        "button": "해제하기"
+      },
+      "approveForAll": {
+        "subtitle": "판매 등록 승인",
+        "description": "NFT를 판매 등록을 위해 컨트랙트에 접근할 수 있도록 지갑을 통해 승인해 주세요.",
+        "button": "승인하기"
+      },
+      "unlockCurrency": {
+        "subtitle": "가상자산 거래 등록",
+        "description": "선택한 가상자산으로 거래하기 위해 최초 1회 지갑을 통해 승인을 진행해 주세요.",
+        "button": "해제하기"
+      },
+      "sign": {
+        "subtitle": "지갑에서 서명",
+        "description": "소유한 NFT를 판매 등록하며, 거래 시 수수료가 발생함을 확인합니다.",
+        "button": "서명하기"
+      },
+      "done": {
+        "subtitle": "판매 등록이 완료되었습니다!",
+        "description": "등록한 NFT를 친구들과 공유해보세요.",
+        "button": "닫기"
+      }
+    },
+    "placeBid": {
+      "title": "경매 입찰하기",
+      "topBid": "최고 입찰가",
+      "startBid": "경매 시작가",
+      "agreements": "Klaybay의 {termsOfService}에 동의합니다",
+      "termsOfService": "이용약관",
+      "button": {
+        "placeBid": "입찰하기",
+        "convert": "변환하기"
+      },
+      "tooLowBid": "경매가 높이기"
+    },
+    "checkoutItem": {
+      "total": "최종 금액",
+      "creatorFees": "크리에이터 수수료"
+    },
+    "transfer": {
+      "title": "아이템 전송하기",
+      "sign": {
+        "subtitle": "수신자 입력",
+        "description": "서명하고 아이템을 전송하세요.",
+        "sendTo": "받을 사람:",
+        "button": "서명하기"
+      },
+      "done": {
+        "subtitle": "전송이 완료되었습니다!",
+        "description": "입력한 주소로 NFT 전송이 완료되었습니다.",
+        "button": "확인"
+      }
+    }
+  },
+  "payment": {
+    "placeholder": "최종 금액 {payment}",
+    "priceTooLow": "{name}가 {minPrice} 이상이어야 합니다.",
+    "priceTooHigh": "{name가 {maxPrice} 이하여야 합니다.",
+    "mustLessThanStartPrice": "{name}가 시작가보다 낮아야합니다."
+  },
+  "message": {
+    "tooBigToUpload": "첨부하려는 파일의 크기가 {value} 서버에서 허용하는 크기보다 큽니다. 업로드 최대 크기는 {limit}입니다.",
+    "refreshMetadata": {
+      "success": "메타데이터 새로 고침 요청됨"
+    }
+  },
+  "buttons": {
+    "cancelSell": "판매 취소",
+    "buyNow": {
+      "small": "구매",
+      "big": "구매하기"
+    },
+    "placeBid": {
+      "small": "경매",
+      "big": "경매하기"
+    },
+    "sell": "판매",
+    "makeOffer": "제안하기",
+    "acceptOffer": "승인",
+    "cancelOffer": "취소"
+  },
+  "tx": {
+    "createSellOrder": {
+      "message": "서명 중입니다...",
+      "success": "리스팅을 성공적으로 완료했습니다.",
+      "error": "판매 등록 중 오류가 발생했습니다."
+    },
+    "createBuyOrder": {
+      "message": "서명 중입니다...",
+      "success": "가격 제안 등록을 성공적으로 완료했습니다.",
+      "error": "가격 제안 등록 중 오류가 발생했습니다."
+    },
+    "cancelSell": {
+      "message": "서명 중입니다...",
+      "success": "판매 취소를 성공적으로 완료했습니다.",
+      "error": "판매 취소 중 오류가 발생했습니다."
+    },
+    "buyNow": {
+      "message": "서명 중입니다...",
+      "success": "구매를 성공적으로 완료했습니다.",
+      "error": "구매 중 오류가 발생했습니다."
+    },
+    "placeBid": {
+      "message": "서명 중입니다...",
+      "success": "경매 등록을 성공적으로 완료했습니다.",
+      "error": "경매 등록 중 오류가 발생했습니다."
+    },
+    "cancelOffer": {
+      "message": "서명 중입니다...",
+      "success": "가격 제안 취소를 성공적으로 완료했습니다.",
+      "error": "가격 제안 취소 중 오류가 발생했습니다."
+    },
+    "acceptOffer": {
+      "message": "서명 중입니다...",
+      "success": "제안을 수락했습니다.",
+      "error": "제안 수락 중 오류가 발생했습니다."
+    },
+    "initializeProxy": {
+      "message": "등록 중입니다...",
+      "success": "등록을 성공적으로 완료했습니다.",
+      "error": "등록 중 오류가 발생했습니다."
+    },
+    "setApprovalForAll": {
+      "message": "승인 중입니다...",
+      "success": "승인에 성공했습니다.",
+      "error": "승인 중 오류가 발생했습니다"
+    },
+    "unlockCurrency": {
+      "message": "잠금해제 중입니다...",
+      "success": "잠금해제를 성공적으로 완료했습니다.",
+      "error": "잠금해제 중 오류가 발생했습니다."
+    },
+    "wrapKlay": {
+      "message": "변환 중입니다...",
+      "success": "WKLAY로 변환에 성공했습니다.",
+      "error": " WKLAY 변환 중 오류가 발생했습니다.",
+      "lowAmount": "최소 {value} WKLAY가 필요합니다."
+    },
+    "unwrapWKlay": {
+      "message": "언래핑 중입니다...",
+      "success": "WKLAY 언래핑에 성공했습니다.",
+      "error": "WKLAY 언래핑 중 오류가 발생했습니다."
+    },
+    "transfer": {
+      "message": "전송 중입니다...",
+      "success": "전송을 성공적으로 완료했습니다.",
+      "error": "전송중 오류가 발생했습니다."
+    }
+  },
+  "slider": {
+    "minPlaceholder": "최소",
+    "maxPlaceholder": "최대"
+  },
+  "input": {
+    "address": {
+      "placeholder": "지갑 주소를 입력하세요.",
+      "invalid": "유효하지 않은 지갑 주소입니다."
+    }
+  },
+  "share": {
+    "link": "링크 공유",
+    "facebook": "페이스북 공유",
+    "twitter": "트위터 공유",
+    "template": {
+      "text": "클레이베이에서 발견한 아이템을 함께봐요! 👀 🕹️ \n어떤 아이템을 찾았는지 더 알고싶다면 👉 {url}",
+      "hashtags": "klaybay,klaytn,NFTs,GameNFT,NFTCollection,클레이베이,클레이튼",
+      "quote": "클레이베이에서 발견한 아이템을 함께봐요! 👀 🕹️ \n어떤 아이템을 찾았는지 더 알고싶다면 👉 {url}"
+    }
+  },
+  "countDown": {
+    "saleEnds": "판매 마감일",
+    "months": "개월",
+    "days": "일",
+    "hours": "시간",
+    "minutes": "분",
+    "seconds": "초"
+  },
+  "floorPrice": {
+    "above": "+{value}",
+    "same": "바닥가와 \n같음",
+    "below": "-{value}"
+  },
+  "klaybay-js": {
+    "OrdersMustOppositeSideError": "판매와 구매 주문 쌍을 거래할 수 있습니다.",
+    "OrdersMustSameFeeMethodError": "같은 fee 종류여야 합니다.",
+    "OrdersMustSamePaymentTokenError": "결제 토큰이 같아야 합니다.",
+    "OrdersSellTakerError": "구매 예정자가 정해져 있지 않거나 일치해야 합니다.",
+    "OrdersBuyTakerError": "판매자가 정해져 있지 않거나 일치해야 합니다.",
+    "OrdersMakerTakerNotMatchingError": "등록된 판매자/구매자가 일치해야 합니다.",
+    "OrdersTargetError": "거래 주문 타겟이 같아야 합니다.",
+    "OrdersHowtoCallError": "`how-to-call`이 같아야 합니다.",
+    "OrdersBuyTimeError": "매수 주문이 만료되었거나 미래에 유효합니다.",
+    "OrdersSellTimeError": "매도 주문이 만료되었거나 미래에 유효합니다.",
+    "OrdersCheckSystemClockError": "Error creating your order. Check that your system clock is set to the current date and time before you try again.",
+    "OrderCalldataCanMatchError": "매수/매도 주문이 매칭될 수 없는 값입니다.",
+    "ABINotFoundMethodError": "ABI {value} 가 없습니다.",
+    "DeclinedToAutorizeBuyError": "매수/경매 주문을 취소했습니다.",
+    "DeclinedToAutorizeSellError": "판매 등록을 취소했습니다.",
+    "NeedAtLeastOneSellOrderError": "Need to make at least one sell order",
+    "NeedAtLeastOneAssetOrderError": "Need at least one asset to create orders for",
+    "NotSameFactoryContractAddressError": "All assets must be on the same factory contract address",
+    "DeclinedToAthorizeFactorySellError": "You declined to authorize your auction, or your web3 provider can't sign using personal_sign. Try 'web3-provider-engine' and make sure a mnemonic is set. Just a reminder: there's no gas needed anymore to mint tokens!",
+    "IsApprovedForAllError": "Couldn't get permission to approve these tokens for trading. Their contract might not be implemented correctly. Please contact the developer!",
+    "MissingArgmuentFindingOwnerError": "Missing an argument for finding the owner of this asset",
+    "MissingOwnershipSchemaError": "Missing ownership schema for this asset type",
+    "FailedGetCurrentOwnerError": "Unable to get current owner from smart contract",
+    "TotalBountyTooLargeError": "Total bounty exceeds the maximum for this asset type {value} Remember that Klaybay will add {value}% for referrers with Klaybay accounts!",
+    "KlaybaySellerBountyTooLargeError": "Total bounty exceeds the maximum for this asset type {maxTotalBountyPercent} Remember that Klaybay will add {klaybaySellerBountyPercent}% for referrers with Klaybay accounts!",
+    "OrderHashMismatchError": "Order couldn't be validated by the exchange due to a hash mismatch. Make sure your wallet is on the right network!",
+    "UninitializedProxyAddressError": "지갑주소가 등록되어있지 않습니다.",
+    "GetProxyChainError": "등록된 지갑 주소를 찾지 못했습니다. 올바른 블록체인에 접속중인지 확인해보세요!",
+    "InitializeProxyAddressError": "지갑 주소 등록을 실패했습니다. :( 지갑이나 브라우저를 다시 시작해보세요!",
+    "InsufficientWrappedBalanceError": "WKLAY 잔고가 부족합니다. KLAY를 WKLAY로 변환을 하세요.",
+    "InsufficientBalanceError": "KLAY 잔고가 부족합니다.",
+    "ValidateBuyOrderError": "매수 주문 정보를 검증하는데 실패했습니다. 올바른 블록체인에 접속중인지 확인해보세요!",
+    "TooLargeFeesError": "수수료가 {value}% 보다 작아야 합니다.",
+    "NegativeFeesError": "수수료가 0% 보다 커야 합니다.",
+    "LeastExpirationTimeFromNowOrZeroError": "마감기한이 최소 현재보다 {value} 초 이후거나, 설정값이 없어야 합니다.",
+    "ListingTimeCannotPastError": "리스팅 시간을 과거 시간으로 할 수 없습니다.",
+    "ListingTimeMustBeforeExpirationTimeError": "리스팅 시간은 마감시간 이전이어야 합니다.",
+    "EnglishAuctionsMustHaveExpirationTimeError": "최고가 입찰은 마감 시간 값을 필수 입력 해야 합니다.",
+    "ExpirationTimeMustSecondsError": "마감시간 값은 초단위 값이어야 합니다.",
+    "NegativeStartinPriceError": "시작가는 음수가 될 수 없습니다.",
+    "NotFoundPaymentTokenError": "{value}는 결제 토큰으로 사용할 수 있는 KIP7/ERC-20이 아닙니다.",
+    "EnglishAuctionsMustUseWrappedTokenError": "최고가 입찰은 WKLAY나 KIP7/ERC-20 토큰이어야 합니다.",
+    "OffersMustUseWrappedTokenError": "Offers must use WKLAY or an KIP7/ERC-20 token.",
+    "EndPriceMustLessOrEqualStartPriceError": "End price must be less than or equal to the start price.",
+    "ExpirationTimeMustSetVaringPriceError": "Expiration time must be set if order will change in price.",
+    "ReservingPriceMustGreaterOrEqualStartPrice": "Reserve price must be greater than or equal to the start amount.",
+    "BuyerBalanceNotEnoughToBuyError": "매수자가 구매할 잔고가 부족합니다.",
+    "YourBalanceNotEnoughToBuyError": "KLAY 잔고가 부족합니다.",
+    "NetworkRejectedTransactionError": "블록체인에서 해당 거래를 거절했습니다. 자세한 에러 내용은 다음과 같습니다. {value}",
+    "UserDeniedTransactionError": "거래를 사용자가 승인하지 않았습니다. {value}",
+    "UnsupportedAssetSchemaError": "({value}) 아이템은 아직 지원하지 않습니다.",
+    "InvalidBuyOrderMatchError": "매수 주문이 유효하지 않습니다. 최근에 취소되/제거되었을 수 있습니다. 페이지를 새로고침하고 다시 시도해 보세요!",
+    "InvalidSellOrderMatchError": "매도 주문이 유효하지 않습니다. 최근에 취소되/제거되었을 수 있습니다. 페이지를 새로고침하고 다시 시도해 보세요!",
+    "MatchingOrderError": "해당 판매를 구매하는데 실패했습니다.: {value}. 나중에 다시 시도해 보세요.",
+    "InvalidOrderMetatDataError": "주문의 메타데이터가 유효하지 않습니다.",
+    "WhitelistingOnlyforNFTError": "화이트리스팅은 NFT에서만 유효합니다.",
+    "FailedValidateSellOrderParametersError": "판매 주문 정보 검증에 실패했습니다. 올바른 블록체인에 접속중인지 확인하세요!",
+    "UnexpectedSchemaNameError": "스키마이름 {value} 이 예상치 못한 값입니다.",
+    "NotOwnerError": "해당 아이템 {address} {assetId} 을 최소 수량 ({minAmount})을 가지고 있지 않습니다.",
+    "NoWalletAddressError": "지갑 주소가 없습니다.",
+    "InvalidWalletAddressError": "유효하지 않은 지갑 주소입니다.",
+    "NotNullWalletAddressError": "지갑 주소 값이 있어야 합니다."
+  },
+  "walletError": {
+    "invalidInput": "Invalid input.",
+    "resourceNotFound": "Resource not found.",
+    "resourceUnavailable": "Resource unavailable.",
+    "transactionRejected": "Transaction rejected.",
+    "methodNotSupported": "Method not supported.",
+    "limitExceeded": "Request limit exceeded.",
+    "parse": "Invalid JSON was received by the server. An error occurred on the server while parsing the JSON text.",
+    "invalidRequest": "The JSON sent is not a valid Request object.",
+    "methodNotFound": "The method does not exist / is not available.",
+    "invalidParams": "Invalid method parameter(s).",
+    "internal": "Internal JSON-RPC error.",
+    "userRejectedRequest": "사용자가 취소/거부하였습니다.",
+    "unauthorized": "사용자가 승인하지 않았습니다.",
+    "unsupportedMethod": "provider에서 지원하지 않는 method 입니다.",
+    "disconnected": "provider에 모든 체인에 연결되어 있지 않습니다.",
+    "chainDisconnected": "provider가 특정 체인에 연결되어 있지 않습니다.",
+    "locked": "지갑을 먼저 열어주세요."
+  }
+}
